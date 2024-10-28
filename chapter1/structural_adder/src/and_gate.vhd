@@ -11,4 +11,7 @@ entity and_gate is
 	);
 end entity;
 
--- implement the and_gate architecture
+architecture and_gate_arch of and_gate is
+begin 
+	Z <= A and B;
+end architecture;

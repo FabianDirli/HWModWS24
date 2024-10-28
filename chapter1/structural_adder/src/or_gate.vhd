@@ -11,5 +11,7 @@ entity or_gate is
 	);
 end entity;
 
-
--- implement the or_gate architecture
+architecture or_gate_arch of or_gate is
+begin
+	Z <= A or B;
+end architecture;

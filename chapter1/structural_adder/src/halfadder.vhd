@@ -12,4 +12,19 @@ entity halfadder is
 	);
 end entity;
 
--- implement the halfadder architecture
+architecture halfadder_arch of halfadder is 
+begin
+	xor_gate : entity work.xor_gate
+	port map (
+		A => A,
+		B => B,
+		Z => Sum
+	);
+
+	and_gate : entity work.and_gate
+	port map (
+		A => A,
+		B => B,
+		Z => Cout
+	);
+end architecture;

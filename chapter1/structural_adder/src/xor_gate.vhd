@@ -11,4 +11,7 @@ entity xor_gate is
 	);
 end entity;
 
--- implement the xor_gate architecture
+architecture xor_gate_arch of xor_gate is
+begin
+	Z <= A xor B;
+end architecture;

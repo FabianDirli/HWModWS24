@@ -52,9 +52,9 @@ begin
 	begin
 		wait until falling_edge(WE_N);
 		if OE_N = '1' then
-			wait for TPWE1-TSD/2;
+			wait for TPWE1-TSD/4;
 		else
-			wait for TPWE2-TSD/2;
+			wait for TPWE2-TSD/4;
 		end if;
 		tmp := memory(to_integer(unsigned(A)));
 		if LB_N = '0' then
@@ -94,6 +94,6 @@ begin
 	we_z : process is
 	begin
 		wait until WE_N'event;
-		set_high_z(WE_N, high_z_we, THZWE, TLZCE);
+		set_high_z(WE_N, high_z_we, THZWE, TLZWE);
 	end process;
 end architecture;

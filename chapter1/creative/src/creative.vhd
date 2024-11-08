@@ -1,48 +1,79 @@
+library ieee;
 use work.vhdldraw_pkg.all;
+use ieee.math_real.all;
 
 entity creative is
 end entity;
 
 architecture arch of creative is
-begin
-	main : process is
-		variable draw : vhdldraw_t;
 
-		constant a0 : integer := 10;  -- Startwert
-		constant r : real := 1.5;      -- Verhältnisfaktor
-		constant num_terms : integer := 10; -- Anzahl der Terme
-		constant frame_width : natural := 800;
-		constant frame_height : natural := 600;
-
-		-- Zeichnen der geometrischen Reihe
-        variable x_pos : integer := 100;  -- Startposition
-        variable y_pos : integer := frame_height - 100;  -- Y-Position
-
-		variable height : integer := integer(a0 * (r ** real(n)));
+	procedure draw_star(draw: inout vhdldraw_t; x, y, b : integer) is
 	begin
-		-- change the dimensions to anything you want
-		--draw.init(400, 400);
-		--draw.show("creative.ppm");
+		case b is
+			when 0 =>
+				draw.setColor(255, 255, 0);
+			when 1 => 
+				draw.setColor(255, 255, 100);
+			when 2 => 
+				draw.setColor(255, 255, 150);
+			when 3 => 
+				draw.setColor(255, 255, 200);
+			when others =>
+				draw.setColor(255, 0, 0);
+		end case;
+	
+		draw.drawPoint(x, y);
+		draw.drawPoint(x + 1, y);
+		draw.drawPoint(x, y + 1);
+		draw.drawPoint(x + 1, y + 1);
+	end procedure;
 
-		-- Initialisierung des Zeichenrahmens
-        draw.init(frame_width, frame_height);
-        draw.clear(WHITE);  -- Hintergrundfarbe weiß
+begin
 
-        
+	process
+		variable draw : vhdldraw_t;
+		variable width : natural := 200;
+		variable height : natural := 200;
+		variable i : integer;
+		variable x, y, b : real;
+		variable star_count : natural := 20;
+		variable seed1 : positive := 1;
+    	variable seed2 : positive := 1;
 
-        for n in 0 to num_terms - 1 loop
-            -- Berechnung der Höhe des Rechtecks basierend auf der geometrischen Reihe
-            
+	begin
+		draw.init(width, height);
 
-            -- Zeichnen des Rechtecks
-            draw.fillRectangle(x_pos, y_pos - height, 50, height);
-            
-            -- Position für das nächste Rechteck anpassen
-            x_pos := x_pos + 60;  -- Abstand zwischen den Rechtecken
-        end loop;
+		-- set background color
+		draw.clear(create_color(0, 0, 50));
+		
+		-- draw moon
+		draw.setColor(200, 200, 200);
+		draw.fillCircle(150, 50, 20);
 
-        -- Anzeige des Zeichens
-        draw.show("geometric_series.ppm");
+		-- draw stars
+		for i in 1 to star_count loop
+			-- get random x and y
+			uniform(seed1, seed2, x);
+			uniform(seed1, seed2, y);
+			uniform(seed1, seed2, b);
+			draw_star(draw, integer(x * real(width)), integer(y * real(height)), integer(b * 3.0));
+		end loop;
+		
+		i := 0;
+		while i < star_count loop
+			-- get random x and y
+			uniform(seed1, seed2, x);
+			uniform(seed1, seed2, y);
+			uniform(seed1, seed2, b);
+			if i mod 2 = 0 then
+				draw_star(draw, integer(x * real(width)), integer(y * real(height)), integer(b * 3.0));
+			else
+				draw.drawPoint(integer(x * real(width)), integer(y * real(height))); -- small star
+			end if;
+			i := i + 1;
+		end loop;
+	
+		draw.show("creative.ppm");
 
 		wait;
 	end process;

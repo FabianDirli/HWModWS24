@@ -12,7 +12,7 @@ end entity;
 architecture tb of bin2dec_tb is
 	signal bin_in   :  std_ulogic_vector (7 downto 0);
 	signal dec_out  :  integer;
-	signal bcd_out  :  std_ulogic_vector (11 downto 0);
+	signal bcd_out  :  std_ulogic_vector (50 downto 0);
 begin
 
 	uut : entity work.bin2dec
@@ -28,7 +28,7 @@ begin
 		report "Test binary: (11011011)";
 		bin_in <= (7 downto 0 => "11011011", others => '0');
 		wait for 10 ns;
-		report to_string(bin_in) & " is decimal:" & to_string(dec_out) & " is BCD " & to_string(bcd_out);
+		report to_string(bin_in) & " is decimal " & to_string(dec_out) & " is BCD " & to_string(bcd_out);
 		assert dec_out = 219 report "Decimal: " & to_string(dec_out) & " for binary: " & to_string(bin_in) & " is wrong!" severity error;
 		assert bcd_out = "001000011001" report "BCD: " & to_string(bcd_out) & " for binary: " & to_string(bin_in) & " is wrong!" severity error;
 

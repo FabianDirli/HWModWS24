@@ -45,7 +45,8 @@ architecture bin2dec_arch of bin2dec is
 		return result;
 	end function;
 
-	pure function decToBcd (dec : integer) return std_logic_vector is
+
+	impure function decToBcd (dec : integer) return std_logic_vector is
 		variable tmp : integer;
 		variable result : std_logic_vector (bcd_out'length-1 downto 0);
 		variable dec_cpy : integer := dec;

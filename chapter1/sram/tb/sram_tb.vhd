@@ -21,9 +21,12 @@ begin
 			CE_N <= '0';
 			A <= std_ulogic_vector(to_unsigned(addr, A'length));
 			wait for TAA;
+			wait for 1ns; -- data is NOT valid after TAA!
 			data := IO;
 			wait for TOHA;
-
+			OE_N <= '1';
+			CE_N <= '1';
+	
 		end procedure;
 
 		procedure write(addr : integer; data : word_t) is
@@ -33,14 +36,12 @@ begin
 			wait for TSA;
 			CE_N <= '0';
 			WE_N <= '0';
-			wait for THZWE;
 			IO <= data;
-			wait for TSD;
+			wait for THZWE;
 			CE_N <= '1';
 			WE_N <= '1';
 			wait for THD;
 			IO <= (others => 'Z');
-			wait for TLZWE;
 
 		end procedure;
 

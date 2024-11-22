@@ -77,6 +77,35 @@ For older versions of GNOME Boxes it might be necessary to first convert the vir
 qemu-img convert -f vdi -O qcow2 ECS-EDA-Tools.vdi ECS-EDA-Tools.qcow2
 ```
 
+## Remote Lab Setup
+
+If you plan to use the Remote Lab, you have to install our access tools.
+Please run the following command on the computer from which you want to access the Remote Lab (i.e., most probably the VM).
+
+```bash
+pip install git+https://git.inf2.tuwien.ac.at/sw/rpatools
+```
+
+This command installs the tool `rpa_shell` -- RPA standing for Remote Place Assigner.
+You can run it using the `-h` command line argument to access its documentation.
+
+If you run `rpa_shell` for the first time, it starts a configuration wizard, where it asks for the RPA server URL, which is `ssh.tilab.tuwien.ac.at`.
+Your login credentials are the same as for the (local) TILab.
+
+# Demonstrations
+
+## Demonstration I
+
+| task | Points | Keywords (Topics) |
+|-|-|----|
+| [fulladder](demos/demo1/fulladder/task.md) | - | behavioral modeling, testbench |
+| [vectoradder](demos/demo1/vectoradder/task.md) | - | testbench, control flow |
+
+## Demonstration II
+
+| task | Points | Keywords (Topics) |
+|-|-|----|
+| [lfsr](demos/demo2/lfsr/task.md) | - | behavioral modeling, testbench |
 
 # Task Overview
 
@@ -93,10 +122,10 @@ qemu-img convert -f vdi -O qcow2 ECS-EDA-Tools.vdi ECS-EDA-Tools.qcow2
 | [barcode](chapter1/barcode/task.md) | 2 | VHDLDraw, reading specifications |
 | [sram](chapter1/sram/task.md) | 1 | subprograms, testbench, reading specifications |
 
-## Demonstration I
+## Chapter II
 
 | task | Points | Keywords (Topics) |
 |-|-|----|
-| [fulladder](demos/demo1/fulladder/task.md) | - | behavioral modeling, testbench |
-| [vectoradder](demos/demo1/vectoradder/task.md) | - | testbench, control flow |
+| [project_setup](chapter2/project_setup/task.md) | 1 | quartus, synthesis |
+| [simplecalc](chapter2/simplecalc/task.md) | 2 | registers, arithmetic operations |
 

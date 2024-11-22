@@ -71,6 +71,38 @@ package vhdldraw_pkg is
 end package;
 
 package body vhdldraw_pkg is
+	-- the midpoint algorithm requires 64 bit for intermediate results if we do not want to overflow for even with small windows and shapes
+	subtype int64_t is signed(63 downto 0);
+
+	function to_int64_t(val : integer) return int64_t is begin
+		return to_signed(val, int64_t'length);
+	end function;
+
+	function "*"(a, b : int64_t) return int64_t is
+		variable tmp : signed(127 downto 0) := (others => '0');
+	begin
+		for i in a'range loop
+			if a(i) ='1' then
+				tmp(63+i downto i) := b + tmp(63+i downto i);
+			end if;
+		end loop;
+		return tmp(63 downto 0);
+	end function;
+
+	function "*"(a : integer; b : int64_t) return int64_t is begin
+		return to_int64_t(a) * b;
+	end function;
+
+	function "*"(a : int64_t; b : integer) return int64_t is begin
+		return b * a;
+	end function;
+
+	-- limited to int64_t values with max 32 bits ... sufficient for our cases though
+	function to_real(val : int64_t) return real is begin
+		assert val(63 downto 32) = 32b"0" report "cannot convert int64_t value with 2^32-1";
+		return real(to_integer(val));
+	end function;
+
 	function create_color(r, g, b : natural) return color_t is
 		variable color : color_t;
 	begin
@@ -186,6 +218,11 @@ package body vhdldraw_pkg is
 			end if;
 		end procedure;
 
+		-- Convenience overload for use in midpoint algorithm
+		procedure drawPoint(x, y : int64_t) is begin
+			drawPoint(to_integer(x), to_integer(y));
+		end procedure;
+
 		-- Bresenham's algorithm
 		procedure drawLine(x0, y0, x1, y1 : integer) is
 			constant dx : integer := abs(x1 - x0);
@@ -215,6 +252,11 @@ package body vhdldraw_pkg is
 			end loop;
 		end procedure;
 
+		-- convenience overload for use in midpoint algorithm
+		procedure drawLine(x0, y0, x1, y1 : int64_t) is begin
+			drawLine(to_integer(x0), to_integer(y0), to_integer(x1), to_integer(y1));
+		end procedure;
+
 		procedure drawRectangle(x, y : integer; width, height : integer) is
 		begin
 			drawPolygon((x,y, x+width-1,y, x+width-1,y+height-1, x,y+height-1));
@@ -226,13 +268,13 @@ package body vhdldraw_pkg is
 		end procedure;
 
 		procedure midpointAlgorithm(x, y, a, b: integer; fill : boolean) is
-			constant a2 : natural := a * a;
-			constant b2 : natural := b * b;
-			variable dx : integer := 0;
-			variable dy : integer := 2 * a2 * b;
-			variable d : integer := b2 - (a2 * b) + integer(real(a2) * 0.25);
-			variable row : integer := b;
-			variable col : integer := 0;
+			constant a2 : int64_t := to_int64_t(a * a);
+			constant b2 : int64_t := to_int64_t(b * b);
+			variable dx : int64_t := to_int64_t(0);
+			variable dy : int64_t := 2 * a2 * b;
+			variable d  : int64_t := b2 - (a2 * b) + to_int64_t(integer(to_real(a2) * 0.25));
+			variable row : int64_t := to_int64_t(b);
+			variable col : int64_t := to_int64_t(0);
 		begin
 			while (dx < dy) loop
 				if fill then
@@ -258,7 +300,7 @@ package body vhdldraw_pkg is
 				end if;
 			end loop;
 
-			d := integer(real(b2) * (real(col) + 0.5) * (real(col) + 0.5)) + (a2 * (row - 1) * (row - 1)) - (a2 * b2);
+			d := to_int64_t(integer(to_real(b2) * (to_real(col) + 0.5) * (to_real(col) + 0.5))) + a2 * (row-1) * (row-1) - a2 * b2;
 
 			while (row >= 0) loop
 				if fill then

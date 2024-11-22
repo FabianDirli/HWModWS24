@@ -7,6 +7,7 @@ clean:
 	rm -f *log
 	rm -fr work
 	rm -f *.cf
+	rm -f *.o
 	rm -f *.dump.ghw
 	rm -f *.ppm
 	rm -f $(CLEAN_FILES)

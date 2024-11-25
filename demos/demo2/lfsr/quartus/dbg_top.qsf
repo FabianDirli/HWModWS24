@@ -2,8 +2,8 @@
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY dbg_top
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:57:40  November 22, 2024"
-set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Standard Edition"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:18:36  November 25, 2024"
+set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.2 Standard Edition"
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0

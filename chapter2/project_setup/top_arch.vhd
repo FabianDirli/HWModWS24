@@ -17,10 +17,10 @@ begin
 	hex6 <= to_segs(x"0");
 	hex5 <= to_segs(x"2");
 	hex4 <= to_segs(x"4");
-	hex3 <= to_segs(switches(3 downto 0));
-	hex2 <= to_segs(switches(7 downto 4));
-	hex1 <= to_segs(switches(11 downto 8));
-	hex0 <= to_segs(switches(15 downto 12));
+	hex3 <= to_segs(switches(15 downto 12));
+	hex2 <= to_segs(switches(11 downto 8));
+	hex1 <= to_segs(switches(7 downto 4));
+	hex0 <= to_segs(switches(3 downto 0));
 
 end architecture;
 

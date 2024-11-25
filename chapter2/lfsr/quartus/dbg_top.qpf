@@ -1,6 +1,6 @@
 
 QUARTUS_VERSION = "22.1std.2 Standard Edition"
-DATE = "16:18:34  November 25, 2024"
+DATE = "16:18:35  November 25, 2024"
 
 # Revisions
 PROJECT_REVISION = "dbg_top"

@@ -62,7 +62,7 @@ Click `Next`, select `Empty project` in the next step and click `Next` again.
 ![New Project Wizard (Step 4)](.mdata/quartus_npw_4_files.png)
 
 In this step source files can be added to the project.
-For this task you need to add the source files of the `lib` directory, i.e.
+For this task you need to add some source files of the `lib` directory, i.e.
 
 * `lib/top/src/dbg_core.qxp`
 * `lib/top/src/dbg_top.vhd`
@@ -93,6 +93,9 @@ Click `Next`.
 
 Here, you can leave the default settings, i.e., `<None>`.
 Click `Next` and `Finish`.
+If a prompt asks if you trust the source, click `Yes`.
+You now have an empty Quartus project to apply the following steps on.
+
 If a prompt asks if you trust the source, click `Yes`.
 You now have an empty Quartus project to apply the following steps on.
 
@@ -168,10 +171,10 @@ begin
 	hex6 <= to_segs(x"0");
 	hex5 <= to_segs(x"2");
 	hex4 <= to_segs(x"4");
-	hex3 <= to_segs(switches(3 downto 0));
-	hex2 <= to_segs(switches(7 downto 4));
-	hex1 <= to_segs(switches(11 downto 8));
-	hex0 <= to_segs(switches(15 downto 12));
+	hex3 <= to_segs(switches(15 downto 12));
+	hex2 <= to_segs(switches(11 downto 8));
+	hex1 <= to_segs(switches(7 downto 4));
+	hex0 <= to_segs(switches(3 downto 0));
 
 end architecture;
 
@@ -219,8 +222,6 @@ Consult the [FPGA board manual](https://www.terasic.com.tw/cgi-bin/page/archive_
 
 **Be sure to select the correct I/O Standard!**
 The default value in the Pin Planner is not correct for one of the pins.
-
-
 
 ## Compilation
 

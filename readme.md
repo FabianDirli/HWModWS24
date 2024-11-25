@@ -128,4 +128,6 @@ Your login credentials are the same as for the (local) TILab.
 |-|-|----|
 | [project_setup](chapter2/project_setup/task.md) | 1 | quartus, synthesis |
 | [simplecalc](chapter2/simplecalc/task.md) | 2 | registers, arithmetic operations |
+| [sorting_network](chapter2/sorting_network/task.md) | 1 | registers, unconstrained types |
+| [lfsr](chapter2/lfsr/task.md) | 2 | registers, generics |
 

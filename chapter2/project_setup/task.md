@@ -340,7 +340,7 @@ This command installs the tools `rpa_shell` and `rpa_gui`, RPA standing for Remo
 ### RPA Configuration
 Open a terminal and run `rpa_shell`.
 When you run this the first time, a configuration wizard will be executed.
-The URL is `ssh.tuwien.ac.at`, the username is the one you also use for the lab (`h`followed by your student id).
+The URL is `ssh.tilab.tuwien.ac.at`, the username is the one you also use for the lab (`m` followed by your student id).
 Next, the wizard will ask you if you already created an SSH key.
 If you did, you can enter `y` and then specify its location.
 Otherwise, or if you want a dedicated new key, you can enter `n` and let the wizard create one for you (the passphrase is optional).

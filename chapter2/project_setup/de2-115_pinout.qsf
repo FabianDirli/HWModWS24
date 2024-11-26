@@ -247,7 +247,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to char_lcd_en
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to char_lcd_on
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to char_lcd_rs
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to char_lcd_rw
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to emulated_gc_data
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to emulated_snes_clk
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to emulated_snes_data
@@ -313,7 +312,6 @@ set_instance_assignment -name IO_STANDARD "2.5 V" -to keys[0]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to keys[1]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to keys[2]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to keys[3]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ledg[0]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to ledg[1]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to ledg[2]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to ledg[3]

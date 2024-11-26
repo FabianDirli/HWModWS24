@@ -7,7 +7,7 @@ endif
 
 QUARTUS_QPF=$(shell ls $(QUARTUS_PROJECT_DIR)/*.qpf 2>/dev/null)
 QUARTUS_QSF=$(shell ls $(QUARTUS_PROJECT_DIR)/*.qsf 2>/dev/null)
-QUARTUS_PROJECT_NAME=$(shell basename $(QUARTUS_QPF) .qpf)
+QUARTUS_PROJECT_NAME=$(shell basename $(QUARTUS_QSF) .qsf)
 QUARTUS_LOG_FILE=$(QUARTUS_PROJECT_DIR)/BUILD_$(shell date '+%d.%m.%y-%H_%M_%S').log
 
 qcompile: $(QUARTUS_QPF) $(QUARTUS_QSF)

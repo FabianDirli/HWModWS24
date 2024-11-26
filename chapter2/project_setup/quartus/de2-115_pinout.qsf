@@ -1,3 +1,4 @@
+set_global_assignment -name TOP_LEVEL_ENTITY dbg_top
 set_location_assignment PIN_AC15 -to aux[0]
 set_location_assignment PIN_Y17 -to aux[1]
 set_location_assignment PIN_Y16 -to aux[2]

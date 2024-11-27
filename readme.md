@@ -127,6 +127,7 @@ Your login credentials are the same as for the (local) TILab.
 | task | Points | Keywords (Topics) |
 |-|-|----|
 | [project_setup](chapter2/project_setup/task.md) | 1 | quartus, synthesis |
+| [generic_adder](chapter2/generic_adder/task.md) | 1 | structural modeling, generics, generates |
 | [simplecalc](chapter2/simplecalc/task.md) | 2 | registers, arithmetic operations |
 | [sorting_network](chapter2/sorting_network/task.md) | 1 | registers, unconstrained types |
 | [lfsr](chapter2/lfsr/task.md) | 2 | registers, generics |

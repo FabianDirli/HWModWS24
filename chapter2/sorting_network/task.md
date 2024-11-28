@@ -39,7 +39,7 @@ The signal `start` signals your design to start sorting the inputs.
 Lastly, `done` is supposed to be asserted for one clock cycle whenever your design finished sorting its input and the sorted data is output on `sorted_data`.
 
 Place registers between all layers of your sorting network, as well as at the input and output of the sorting network.
-I.e., for `N4L3D3` in the first clock cycle after sampling a high `start` and the input data, it first compares inputs 0 & 2 and 1 & 3 simultaneously.
+I.e., for `N4L5D3` in the first clock cycle after sampling a high `start` and the input data, it first compares inputs 0 & 2 and 1 & 3 simultaneously.
 The intermediate registers then sample the result of this first layer.
 The output of these registers is then used by the next sorting network layer, which is then stored by further registers and so on.
 The sorting should thus not take more than five clock cycles.

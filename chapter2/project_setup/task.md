@@ -53,7 +53,7 @@ Click `Next`.
 
 In this step, you have to configure the directory where the project is stored.
 Set it to the `quartus` directory of this task.
-The name of the project must be set to `top`.
+The name of the project must be set to `dbg_top`.
 For top-level entity `dbg_top` must be selected.
 This is the name of a wrapper which we will use to provide you with additional functionality required for the remote lab and will be discussed further below.
 

@@ -131,4 +131,5 @@ Your login credentials are the same as for the (local) TILab.
 | [simplecalc](chapter2/simplecalc/task.md) | 2 | registers, arithmetic operations |
 | [sorting_network](chapter2/sorting_network/task.md) | 1 | registers, unconstrained types |
 | [lfsr](chapter2/lfsr/task.md) | 2 | registers, generics |
+| [watch](chapter2/watch/task.md) | 2 | registers, synthesis, timing analysis |
 

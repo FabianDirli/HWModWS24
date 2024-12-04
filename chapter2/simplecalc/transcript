@@ -1,0 +1,39 @@
+# vsim simplecalc_tb -nowlflock -msgmode both 
+# vsim simplecalc_tb -nowlflock -msgmode both 
+# Start time: 18:12:02 on Dec 04,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim
+# //  Version 2022.4 linux Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.simplecalc_tb(bench)#1
+#  run -all
+# ** Note: simulation start
+#    Time: 0 ns  Iteration: 0  Instance: /simplecalc_tb
+# ** Note: Result: 00011110
+#    Time: 75 ns  Iteration: 0  Instance: /simplecalc_tb
+# ** Note: simulation end
+#    Time: 75 ns  Iteration: 0  Instance: /simplecalc_tb
+# Break key hit
+# Break in Process clk_p at tb/simplecalc_tb.vhd line 74
+# Stopped at tb/simplecalc_tb.vhd line 74
+# quit
+# End time: 18:12:04 on Dec 04,2024, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1

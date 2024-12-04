@@ -1,0 +1,246 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11e vcom 2022.4 2022.10, Oct 18 2022
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/homes/m12326119/hwmod_ws2024/chapter2/simplecalc
+T_opt
+Z2 !s110 1733332322
+VebA9c@Qd13iegAc=YShfC2
+04 13 5 work simplecalc_tb bench 1
+=1-000ae431a4f1-67508d62-a1634-11e8c
+R0
+!s12b OEM100
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+tCvgOpt 0
+n@_opt
+OE;O;2022.4;75
+R1
+Pmath_pkg
+!i122 265
+Z3 w1733322684
+R1
+Z4 8../../lib/math/src/math_pkg.vhd
+Z5 F../../lib/math/src/math_pkg.vhd
+l0
+L2 8
+V6o3iO_9IOLbIM`>0_K1dl3
+!s100 7GO4c4HB>Y__ScgGN3ZXo2
+Z6 OE;C;2022.4;75
+33
+b1
+Z7 !s110 1733333545
+!i10b 1
+Z8 !s108 1733333545.000000
+Z9 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|../../lib/math/src/math_pkg.vhd|
+Z10 !s107 ../../lib/math/src/math_pkg.vhd|
+!i113 0
+Z11 o-suppress 1236 -O0 -check_synthesis -2008 -work work
+Z12 tExplicit 1 CvgOpt 0
+Bbody
+DPx4 work 8 math_pkg 0 22 6o3iO_9IOLbIM`>0_K1dl3
+!i122 265
+l0
+L11 61
+VnZUPg`Y@B>LoN?b@VaKe=3
+!s100 5=fb5fRCGmVbPOI82;zFC1
+R6
+33
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 0
+R11
+R12
+Esimplecalc
+Z13 w1733329328
+Z14 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
+Z15 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z16 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 267
+R1
+Z17 8src/simplecalc.vhd
+Z18 Fsrc/simplecalc.vhd
+l0
+L6 1
+VZKKScbciHmT7P:<Xc0fOo3
+!s100 BXA<loVEdAc`NXHiclicX1
+R6
+33
+R7
+!i10b 1
+R8
+Z19 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|src/simplecalc.vhd|
+Z20 !s107 src/simplecalc.vhd|
+!i113 0
+R11
+R12
+Aarch
+R14
+R15
+R16
+Z21 DEx4 work 10 simplecalc 0 22 ZKKScbciHmT7P:<Xc0fOo3
+!i122 267
+l29
+L26 45
+VN`G[V2M9lFGXfia67a2El3
+!s100 F4C1oDGgKbzIl2j9^]m5Q2
+R6
+33
+R7
+!i10b 1
+R8
+R19
+R20
+!i113 0
+R11
+R12
+Esimplecalc_tb
+Z22 w1733332363
+R14
+R15
+R16
+!i122 268
+R1
+Z23 8tb/simplecalc_tb.vhd
+Z24 Ftb/simplecalc_tb.vhd
+l0
+L6 1
+VD0@kggGR>GTnRJ<g6FjPO1
+!s100 e<[^_^Y:lIllKUYQ9EeTI1
+R6
+33
+R7
+!i10b 1
+R8
+Z25 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|tb/simplecalc_tb.vhd|
+Z26 !s107 tb/simplecalc_tb.vhd|
+!i113 0
+R11
+R12
+Abench
+R21
+R14
+R15
+R16
+DEx4 work 13 simplecalc_tb 0 22 D0@kggGR>GTnRJ<g6FjPO1
+!i122 268
+l27
+L9 72
+VQVh^A5BlRa25YY^KS[PET2
+!s100 nCB4L^=Y^aQ69f5iD6_7^1
+R6
+33
+R7
+!i10b 1
+R8
+R25
+R26
+!i113 0
+R11
+R12
+Etop
+R3
+R15
+R16
+!i122 269
+R1
+8../../lib/top/src/top.vhd
+F../../lib/top/src/top.vhd
+l0
+L4 1
+VQlazc_WZm`;<ohecYm9FU1
+!s100 Amk6:8IMRMzabOJJO3oDF3
+R6
+33
+R7
+!i10b 1
+R8
+!s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|../../lib/top/src/top.vhd|
+!s107 ../../lib/top/src/top.vhd|
+!i113 0
+R11
+R12
+Atop_arch_simplecalc
+w1733333543
+R21
+Z27 DEx4 work 3 top 0 22 Qlazc_WZm`;<ohecYm9FU1
+Z28 DPx4 work 8 util_pkg 0 22 _YC]h>;oNzLIHhZWKL8jc1
+R14
+R15
+R16
+!i122 270
+Z29 8top_arch.vhd
+Z30 Ftop_arch.vhd
+l12
+L7 30
+VL0YUiNgei[dbFSb4]@Ed?3
+!s100 ><ii>VbYW3d_G<AjHD]DN1
+R6
+33
+!s110 1733333546
+!i10b 1
+!s108 1733333546.000000
+Z31 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|top_arch.vhd|
+Z32 !s107 top_arch.vhd|
+!i113 0
+R11
+R12
+Putil_pkg
+R15
+R16
+!i122 266
+R3
+R1
+Z33 8../../lib/util/src/util_pkg.vhd
+Z34 F../../lib/util/src/util_pkg.vhd
+l0
+L5 23
+V_YC]h>;oNzLIHhZWKL8jc1
+!s100 VjgRP>X5Xokzn;DWdcO3l3
+R6
+33
+b1
+R7
+!i10b 1
+R8
+Z35 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|../../lib/util/src/util_pkg.vhd|
+Z36 !s107 ../../lib/util/src/util_pkg.vhd|
+!i113 0
+R11
+R12
+Bbody
+R28
+R15
+R16
+!i122 266
+l0
+L29 37
+V]`GBJ79K6b<9n?d=m7]i[2
+!s100 4bPz[7QnAdzMI4ND`6Q833
+R6
+33
+R7
+!i10b 1
+R8
+R35
+R36
+!i113 0
+R11
+R12

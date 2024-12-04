@@ -1,0 +1,77 @@
+** Warning: (vlib-34) Library already exists at "work".
+Errors: 0, Warnings: 1
+QuestaSim vcom 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 18:32:25 on Dec 04,2024
+vcom -O0 -check_synthesis -2008 -work work -suppress 1236 ../../lib/math/src/math_pkg.vhd 
+-- Loading package STANDARD
+-- Compiling package math_pkg
+-- Compiling package body math_pkg
+-- Loading package math_pkg
+End time: 18:32:25 on Dec 04,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim vcom 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 18:32:25 on Dec 04,2024
+vcom -O0 -check_synthesis -2008 -work work -suppress 1236 ../../lib/util/src/util_pkg.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package util_pkg
+-- Compiling package body util_pkg
+-- Loading package util_pkg
+End time: 18:32:25 on Dec 04,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim vcom 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 18:32:25 on Dec 04,2024
+vcom -O0 -check_synthesis -2008 -work work -suppress 1236 src/simplecalc.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity simplecalc
+-- Compiling architecture arch of simplecalc
+** Warning: src/simplecalc.vhd(36): (vcom-1400) Synthesis Warning: Signal "lastOperand1" is read in the process but is not in the sensitivity list.
+** Warning: src/simplecalc.vhd(36): (vcom-1400) Synthesis Warning: Signal "store_operand1" is read in the process but is not in the sensitivity list.
+** Warning: src/simplecalc.vhd(37): (vcom-1400) Synthesis Warning: Signal "operand_data_in" is read in the process but is not in the sensitivity list.
+** Warning: src/simplecalc.vhd(40): (vcom-1400) Synthesis Warning: Signal "store_operand1" is read in the process but is not in the sensitivity list.
+** Warning: src/simplecalc.vhd(49): (vcom-1400) Synthesis Warning: Signal "lastOperand2" is read in the process but is not in the sensitivity list.
+** Warning: src/simplecalc.vhd(49): (vcom-1400) Synthesis Warning: Signal "store_operand2" is read in the process but is not in the sensitivity list.
+** Warning: src/simplecalc.vhd(50): (vcom-1400) Synthesis Warning: Signal "operand_data_in" is read in the process but is not in the sensitivity list.
+** Warning: src/simplecalc.vhd(53): (vcom-1400) Synthesis Warning: Signal "store_operand2" is read in the process but is not in the sensitivity list.
+** Warning: src/simplecalc.vhd(62): (vcom-1400) Synthesis Warning: Signal "sub" is read in the process but is not in the sensitivity list.
+** Warning: src/simplecalc.vhd(58): (vcom-1401) Synthesis Warning: Signal "clk" is in the sensitivity list but is not read in the process.
+End time: 18:32:25 on Dec 04,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 10
+QuestaSim vcom 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 18:32:25 on Dec 04,2024
+vcom -O0 -check_synthesis -2008 -work work -suppress 1236 tb/simplecalc_tb.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity simplecalc_tb
+-- Compiling architecture bench of simplecalc_tb
+-- Loading entity simplecalc
+End time: 18:32:25 on Dec 04,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim vcom 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 18:32:25 on Dec 04,2024
+vcom -O0 -check_synthesis -2008 -work work -suppress 1236 ../../lib/top/src/top.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity top
+End time: 18:32:25 on Dec 04,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim vcom 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 18:32:26 on Dec 04,2024
+vcom -O0 -check_synthesis -2008 -work work -suppress 1236 top_arch.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package util_pkg
+-- Compiling architecture top_arch_simplecalc of top
+-- Loading entity top
+-- Loading entity simplecalc
+End time: 18:32:26 on Dec 04,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

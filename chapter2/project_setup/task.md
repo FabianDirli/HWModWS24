@@ -125,7 +125,7 @@ The most important one is, arguably, the information about which signals are clo
 The timing analyzer can then determine whether the compiled design reaches the performance goals (in terms of achievable maximum frequency) or not.
 
 In Quartus (and also other EDA tools) this is done using a "Synopsys Design Constraints File" or `*.sdc` file.
-Hence, create a file named `top.sdc` and place it in the `quartus` project directory.
+Hence, create a file named `dbg_top.sdc` and place it in the `quartus` project directory.
 Add the file to your project using the `Project -> Add/Remove Files in Project` menu entry and add the following lines to it.
 
 ```tcl
@@ -387,6 +387,19 @@ To reflect this, the stream of warnings can be filtered such that certain warnin
 We already configured Quartus accordingly for the other tasks.
 However, some warnings could still be potentially problematic and are hence shown.
 Make sure to only submit designs were you can argue why certain warnings are alright, we will ask you about them during the exercise session.
+
+|ID| Description  |
+|--|--------------|
+|10540|VHDL Signal Declaration warning at top.vhd([...]): used explicit default value for signal [...] because signal was never assigned a value|
+|12240|Synthesis found one or more imported partitions that will be treated as black boxes for timing analysis during synthesis|
+|13009|TRI or OPNDRN buffers permanently enabled.|
+|13024|Output pins are stuck at VCC or GND|
+|13039|The following bidirectional pins have no drivers|
+|15714|Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details|
+|18236|Number of processors has not been specified which may cause overloading on shared machines. Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.|
+|21074|Design contains [...] input pin(s) that do not drive logic|
+|169064|Following [...] pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results|
+|169177|[...] pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.|
 
 
 # Deliverables

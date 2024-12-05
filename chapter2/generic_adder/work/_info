@@ -1,0 +1,313 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11e vcom 2022.4 2022.10, Oct 18 2022
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/homes/m12326119/hwmod_ws2024/chapter2/generic_adder
+T_opt
+!s110 1733403139
+V?3LmMd:DGQFXmin<iNOU32
+Z2 04 16 5 work generic_adder_tb bench 1
+=1-000ae431a4f1-6751a203-6ac1e-39a90
+R0
+Z3 !s12b OEM100
+Z4 !s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z5 tCvgOpt 0
+n@_opt
+Z6 OE;O;2022.4;75
+R1
+T_opt1
+Z7 !s110 1733404661
+VMGM=YPKn4>A][`OjI34FE1
+R2
+=1-000ae431a4f1-6751a7f5-80986-3c847
+R0
+R3
+R4
+o-quiet -auto_acc_if_foreign -work work -G TESTMODE=exhaustive
+R5
+n@_opt1
+R6
+Eadder4
+Z8 w1733322684
+Z9 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
+Z10 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z11 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 298
+R1
+Z12 8src/adder4.vhd
+Z13 Fsrc/adder4.vhd
+l0
+L5 1
+V0:mVdT>kAeQB6B^[n]8BA3
+!s100 k<RkAo`;Xj9ozFVK`JEo]0
+Z14 OE;C;2022.4;75
+33
+Z15 !s110 1733404660
+!i10b 1
+Z16 !s108 1733404660.000000
+Z17 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|src/adder4.vhd|
+Z18 !s107 src/adder4.vhd|
+!i113 0
+Z19 o-suppress 1236 -O0 -check_synthesis -2008 -work work
+Z20 tExplicit 1 CvgOpt 0
+Abeh
+R9
+R10
+R11
+Z21 DEx4 work 6 adder4 0 22 0:mVdT>kAeQB6B^[n]8BA3
+!i122 298
+l18
+L16 13
+V78Iao_f:6;C1=JT`l?0c_2
+!s100 4n26mkXemOU33c<fjC3O22
+R14
+33
+R15
+!i10b 1
+R16
+R17
+R18
+!i113 0
+R19
+R20
+Egeneric_adder
+Z22 w1733403134
+R10
+R11
+!i122 299
+R1
+Z23 8src/generic_adder.vhd
+Z24 Fsrc/generic_adder.vhd
+l0
+L4 1
+Vj8GOcFkJ7`h[2VPaP;>TQ0
+!s100 _BT0K@jZ7LVKU>E2Ndcio3
+R14
+33
+R15
+!i10b 1
+R16
+Z25 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|src/generic_adder.vhd|
+Z26 !s107 src/generic_adder.vhd|
+!i113 0
+R19
+R20
+Abeh
+R9
+R21
+R10
+R11
+Z27 DEx4 work 13 generic_adder 0 22 j8GOcFkJ7`h[2VPaP;>TQ0
+!i122 299
+l21
+L19 22
+VR8gQfLSBXLj1]F7izBbYS2
+!s100 XGTl:KH<a=TDXT2]ea>6B2
+R14
+33
+R15
+!i10b 1
+R16
+R25
+R26
+!i113 0
+R19
+R20
+Egeneric_adder_tb
+Z28 w1733404658
+R9
+R10
+R11
+!i122 300
+R1
+Z29 8tb/generic_adder_tb.vhd
+Z30 Ftb/generic_adder_tb.vhd
+l0
+L5 1
+V^CE70S<Jm^Ijdi9M0^FFL2
+!s100 EjlFdlNmO4C;5h3[c7GIQ1
+R14
+33
+R15
+!i10b 1
+R16
+Z31 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|tb/generic_adder_tb.vhd|
+Z32 !s107 tb/generic_adder_tb.vhd|
+!i113 0
+R19
+R20
+Abench
+R27
+R9
+R10
+R11
+DEx4 work 16 generic_adder_tb 0 22 ^CE70S<Jm^Ijdi9M0^FFL2
+!i122 300
+l21
+L20 48
+VWLnHEE>LcNP3;aUBCH``?0
+!s100 N`_37K;KCiQ8EDd9aO<>D2
+R14
+33
+R15
+!i10b 1
+R16
+R31
+R32
+!i113 0
+R19
+R20
+Pmath_pkg
+!i122 296
+R8
+R1
+Z33 8../../lib/math/src/math_pkg.vhd
+Z34 F../../lib/math/src/math_pkg.vhd
+l0
+L2 8
+V6o3iO_9IOLbIM`>0_K1dl3
+!s100 7GO4c4HB>Y__ScgGN3ZXo2
+R14
+33
+b1
+R15
+!i10b 1
+R16
+Z35 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|../../lib/math/src/math_pkg.vhd|
+Z36 !s107 ../../lib/math/src/math_pkg.vhd|
+!i113 0
+R19
+R20
+Bbody
+DPx4 work 8 math_pkg 0 22 6o3iO_9IOLbIM`>0_K1dl3
+!i122 296
+l0
+L11 61
+VnZUPg`Y@B>LoN?b@VaKe=3
+!s100 5=fb5fRCGmVbPOI82;zFC1
+R14
+33
+R15
+!i10b 1
+R16
+R35
+R36
+!i113 0
+R19
+R20
+Etop
+R8
+R10
+R11
+!i122 301
+R1
+8../../lib/top/src/top.vhd
+F../../lib/top/src/top.vhd
+l0
+L4 1
+VQlazc_WZm`;<ohecYm9FU1
+!s100 Amk6:8IMRMzabOJJO3oDF3
+R14
+33
+R15
+!i10b 1
+R16
+!s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|../../lib/top/src/top.vhd|
+!s107 ../../lib/top/src/top.vhd|
+!i113 0
+R19
+R20
+Atop_arch_generic_adder
+DEx4 work 3 top 0 22 Qlazc_WZm`;<ohecYm9FU1
+R10
+R11
+!i122 302
+8top_arch.vhd
+Ftop_arch.vhd
+l6
+L5 3
+VFaO63aTBL:gRL<9bfBZ^^0
+!s100 P2N>JbkV7IbfMkm6CM@TF3
+R14
+33
+R7
+!i10b 1
+!s108 1733404661.000000
+!s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|top_arch.vhd|
+!s107 top_arch.vhd|
+!i113 0
+R19
+R20
+Putil_pkg
+R10
+R11
+!i122 297
+R8
+R1
+Z37 8../../lib/util/src/util_pkg.vhd
+Z38 F../../lib/util/src/util_pkg.vhd
+l0
+L5 23
+V_YC]h>;oNzLIHhZWKL8jc1
+!s100 VjgRP>X5Xokzn;DWdcO3l3
+R14
+33
+b1
+R15
+!i10b 1
+R16
+Z39 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|../../lib/util/src/util_pkg.vhd|
+Z40 !s107 ../../lib/util/src/util_pkg.vhd|
+!i113 0
+R19
+R20
+Bbody
+DPx4 work 8 util_pkg 0 22 _YC]h>;oNzLIHhZWKL8jc1
+R10
+R11
+!i122 297
+l0
+L29 37
+V]`GBJ79K6b<9n?d=m7]i[2
+!s100 4bPz[7QnAdzMI4ND`6Q833
+R14
+33
+R15
+!i10b 1
+R16
+R39
+R40
+!i113 0
+R19
+R20

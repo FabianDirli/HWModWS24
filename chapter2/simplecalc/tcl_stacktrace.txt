@@ -1,0 +1,16 @@
+Thu Dec 05 11:42:00 CET 2024
+Trace back: Macro Break
+    while executing
+"macroMark"
+    (procedure "update" line 6)
+    invoked from within
+"update"
+    (procedure "Wave::SelectPane" line 33)
+    invoked from within
+"Wave::SelectPane $widget"
+    (procedure "Wave::ActivateSubWidget" line 14)
+    invoked from within
+"Wave::ActivateSubWidget .main_pane.wave.interior.cs.body.pw.wf.grid.row0,name.data 1200 438"
+    (command bound to event)
+  <2:/opt/questa_core_prime_22.4-for_quartus22.1std-22.4a/mentor/2022-23/RHELx86/QUESTA-CORE-PRIME_22.4a/questasim/linux/tk8.6/bgerror.tcl:106: ::tkerror {Macro Break}
+  <1:eval:1: ::tk::dialog::error::bgerror {Macro Break}

@@ -30,6 +30,4 @@ Warning (10540): VHDL Signal Declaration warning at top.vhd(69): used explicit d
 Warning (10540): VHDL Signal Declaration warning at top.vhd(70): used explicit default value for signal "char_lcd_on" because signal was never assigned a value File: /homes/m12326119/hwmod_ws2024/lib/top/src/top.vhd Line: 70
 Warning (10540): VHDL Signal Declaration warning at top.vhd(71): used explicit default value for signal "char_lcd_blon" because signal was never assigned a value File: /homes/m12326119/hwmod_ws2024/lib/top/src/top.vhd Line: 71
 Warning (10540): VHDL Signal Declaration warning at top.vhd(74): used explicit default value for signal "tx" because signal was never assigned a value File: /homes/m12326119/hwmod_ws2024/lib/top/src/top.vhd Line: 74
-Warning (10540): VHDL Signal Declaration warning at top_arch.vhd(10): used explicit default value for signal "operand2" because signal was never assigned a value File: /homes/m12326119/hwmod_ws2024/chapter2/simplecalc/top_arch.vhd Line: 10
-Warning (10540): VHDL Signal Declaration warning at top_arch.vhd(11): used explicit default value for signal "result" because signal was never assigned a value File: /homes/m12326119/hwmod_ws2024/chapter2/simplecalc/top_arch.vhd Line: 11
 Warning (12240): Synthesis found one or more imported partitions that will be treated as black boxes for timing analysis during synthesis

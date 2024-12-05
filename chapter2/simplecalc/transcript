@@ -1,6 +1,6 @@
 # vsim simplecalc_tb -nowlflock -msgmode both 
 # vsim simplecalc_tb -nowlflock -msgmode both 
-# Start time: 18:12:02 on Dec 04,2024
+# Start time: 12:19:04 on Dec 05,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
 # Use vdir -l command to find such design units.
@@ -27,13 +27,20 @@
 #  run -all
 # ** Note: simulation start
 #    Time: 0 ns  Iteration: 0  Instance: /simplecalc_tb
-# ** Note: Result: 00011110
-#    Time: 75 ns  Iteration: 0  Instance: /simplecalc_tb
+# ** Note: 8 + 6 = 14
+#    Time: 140 ns  Iteration: 0  Instance: /simplecalc_tb
+# ** Error: WRONG
+#    Time: 140 ns  Iteration: 0  Instance: /simplecalc_tb
+# ** Note: 16 - 12 = 4
+#    Time: 220 ns  Iteration: 0  Instance: /simplecalc_tb
+# ** Note: 32 + 24 = 56
+#    Time: 300 ns  Iteration: 0  Instance: /simplecalc_tb
+# ** Error: WRONG
+#    Time: 300 ns  Iteration: 0  Instance: /simplecalc_tb
+# ** Note: 64 - 48 = 16
+#    Time: 380 ns  Iteration: 0  Instance: /simplecalc_tb
 # ** Note: simulation end
-#    Time: 75 ns  Iteration: 0  Instance: /simplecalc_tb
-# Break key hit
-# Break in Process clk_p at tb/simplecalc_tb.vhd line 74
-# Stopped at tb/simplecalc_tb.vhd line 74
+#    Time: 380 ns  Iteration: 0  Instance: /simplecalc_tb
 # quit
-# End time: 18:12:04 on Dec 04,2024, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 1
+# End time: 12:19:04 on Dec 05,2024, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 1

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for dbg_top
-Wed Dec  4 18:41:53 2024
+Thu Dec  5 12:27:21 2024
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition
 
 
@@ -17,11 +17,12 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition
   9. General Register Statistics
  10. Inverted Register Statistics
  11. Source assignments for dbg_core:dbg_core_inst
- 12. Parameter Settings for User Entity Instance: dbg_core:dbg_core_inst
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
- 16. Analysis & Synthesis Suppressed Messages
+ 12. Parameter Settings for User Entity Instance: top:top_inst|simplecalc:uut
+ 13. Parameter Settings for User Entity Instance: dbg_core:dbg_core_inst
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -48,15 +49,15 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Dec  4 18:41:53 2024              ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec  5 12:27:21 2024              ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Standard Edition ;
 ; Revision Name                      ; dbg_top                                            ;
 ; Top-level Entity Name              ; dbg_top                                            ;
 ; Family                             ; Cyclone IV E                                       ;
-; Total logic elements               ; 2,441                                              ;
-;     Total combinational functions  ; 2,182                                              ;
-;     Dedicated logic registers      ; 1,166                                              ;
-; Total registers                    ; 1166                                               ;
+; Total logic elements               ; 2,537                                              ;
+;     Total combinational functions  ; 2,270                                              ;
+;     Dedicated logic registers      ; 1,184                                              ;
+; Total registers                    ; 1184                                               ;
 ; Total pins                         ; 221                                                ;
 ; Total virtual pins                 ; 0                                                  ;
 ; Total memory bits                  ; 8,448                                              ;
@@ -161,59 +162,62 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                   ;
-+-----------------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------+---------+
-; File Name with User-Entered Path                    ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                   ; Library ;
-+-----------------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------+---------+
-; ../../../lib/util/src/util_pkg.vhd                  ; yes             ; User VHDL File                                        ; /homes/m12326119/hwmod_ws2024/lib/util/src/util_pkg.vhd        ;         ;
-; ../../../lib/top/src/dbg_top.vhd                    ; yes             ; User VHDL File                                        ; /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd          ;         ;
-; ../../../lib/top/src/top.vhd                        ; yes             ; User VHDL File                                        ; /homes/m12326119/hwmod_ws2024/lib/top/src/top.vhd              ;         ;
-; ../top_arch.vhd                                     ; yes             ; User VHDL File                                        ; /homes/m12326119/hwmod_ws2024/chapter2/simplecalc/top_arch.vhd ;         ;
-; ../../../lib/top/src/dbg_core.qxp                   ; yes             ; User File                                             ; /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_core.qxp         ;         ;
-; db/dbg_core.ram0_dcl_dp_ram_1c1r1w_ab2237c6.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; db/dbg_core.ram0_dcl_dp_ram_1c1r1w_ab2237c6.hdl.mif            ;         ;
-; db/dbg_core.ram0_dcl_dp_ram_1c1r1w_d79d653d.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; db/dbg_core.ram0_dcl_dp_ram_1c1r1w_d79d653d.hdl.mif            ;         ;
-+-----------------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                         ;
++-----------------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                    ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                         ; Library ;
++-----------------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------+---------+
+; ../../../lib/util/src/util_pkg.vhd                  ; yes             ; User VHDL File                                        ; /homes/m12326119/hwmod_ws2024/lib/util/src/util_pkg.vhd              ;         ;
+; ../../../lib/top/src/dbg_top.vhd                    ; yes             ; User VHDL File                                        ; /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd                ;         ;
+; ../../../lib/top/src/top.vhd                        ; yes             ; User VHDL File                                        ; /homes/m12326119/hwmod_ws2024/lib/top/src/top.vhd                    ;         ;
+; ../top_arch.vhd                                     ; yes             ; User VHDL File                                        ; /homes/m12326119/hwmod_ws2024/chapter2/simplecalc/top_arch.vhd       ;         ;
+; ../src/simplecalc.vhd                               ; yes             ; User VHDL File                                        ; /homes/m12326119/hwmod_ws2024/chapter2/simplecalc/src/simplecalc.vhd ;         ;
+; ../../../lib/top/src/dbg_core.qxp                   ; yes             ; User File                                             ; /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_core.qxp               ;         ;
+; db/dbg_core.ram0_dcl_dp_ram_1c1r1w_ab2237c6.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; db/dbg_core.ram0_dcl_dp_ram_1c1r1w_ab2237c6.hdl.mif                  ;         ;
+; db/dbg_core.ram0_dcl_dp_ram_1c1r1w_d79d653d.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; db/dbg_core.ram0_dcl_dp_ram_1c1r1w_d79d653d.hdl.mif                  ;         ;
++-----------------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                    ;
-+---------------------------------------------+----------------------------------+
-; Resource                                    ; Usage                            ;
-+---------------------------------------------+----------------------------------+
-; Estimated Total logic elements              ; 2,441                            ;
-;                                             ;                                  ;
-; Total combinational functions               ; 2182                             ;
-; Logic element usage by number of LUT inputs ;                                  ;
-;     -- 4 input functions                    ; 1367                             ;
-;     -- 3 input functions                    ; 344                              ;
-;     -- <=2 input functions                  ; 471                              ;
-;                                             ;                                  ;
-; Logic elements by mode                      ;                                  ;
-;     -- normal mode                          ; 1966                             ;
-;     -- arithmetic mode                      ; 216                              ;
-;                                             ;                                  ;
-; Total registers                             ; 1166                             ;
-;     -- Dedicated logic registers            ; 1166                             ;
-;     -- I/O registers                        ; 0                                ;
-;                                             ;                                  ;
-; I/O pins                                    ; 221                              ;
-; Total memory bits                           ; 8448                             ;
-;                                             ;                                  ;
-; Embedded Multiplier 9-bit elements          ; 0                                ;
-;                                             ;                                  ;
-; Maximum fan-out node                        ; dbg_core:dbg_core_inst|clk~input ;
-; Maximum fan-out                             ; 1190                             ;
-; Total fan-out                               ; 12084                            ;
-; Average fan-out                             ; 3.15                             ;
-+---------------------------------------------+----------------------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 2,537     ;
+;                                             ;           ;
+; Total combinational functions               ; 2270      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 1409      ;
+;     -- 3 input functions                    ; 363       ;
+;     -- <=2 input functions                  ; 498       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 2046      ;
+;     -- arithmetic mode                      ; 224       ;
+;                                             ;           ;
+; Total registers                             ; 1184      ;
+;     -- Dedicated logic registers            ; 1184      ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 221       ;
+; Total memory bits                           ; 8448      ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 1208      ;
+; Total fan-out                               ; 12475     ;
+; Average fan-out                             ; 3.16      ;
++---------------------------------------------+-----------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -221,8 +225,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                   ; Entity Name        ; Library Name ;
 +----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
-; |dbg_top                                           ; 2182 (2)            ; 1166 (0)                  ; 8448        ; 0            ; 0       ; 0         ; 221  ; 0            ; |dbg_top                                                                                                                                                              ; dbg_top            ; work         ;
-;    |dbg_core:dbg_core_inst|                        ; 2180 (85)           ; 1166 (0)                  ; 8448        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst                                                                                                                                       ; dbg_core           ; work         ;
+; |dbg_top                                           ; 2270 (1)            ; 1184 (0)                  ; 8448        ; 0            ; 0       ; 0         ; 221  ; 0            ; |dbg_top                                                                                                                                                              ; dbg_top            ; work         ;
+;    |dbg_core:dbg_core_inst|                        ; 2192 (85)           ; 1166 (0)                  ; 8448        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst                                                                                                                                       ; dbg_core           ; work         ;
 ;       |dbg_interface:dbg_if_inst|                  ; 1099 (177)          ; 303 (99)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dbg_interface:dbg_if_inst                                                                                                             ; dbg_interface      ; work         ;
 ;          |dcl_hex_reader:dcl_hex_reader_inst|      ; 155 (155)           ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dbg_interface:dbg_if_inst|dcl_hex_reader:dcl_hex_reader_inst                                                                          ; dcl_hex_reader     ; work         ;
 ;          |dcl_hex_writer:dcl_hex_writer_inst|      ; 73 (73)             ; 92 (92)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dbg_interface:dbg_if_inst|dcl_hex_writer:dcl_hex_writer_inst                                                                          ; dcl_hex_writer     ; work         ;
@@ -242,8 +246,8 @@ https://fpgasoftware.intel.com/eula.
 ;       |gc_ctrl_emulator:gc_ctrl_emulator_inst|     ; 198 (72)            ; 241 (124)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|gc_ctrl_emulator:gc_ctrl_emulator_inst                                                                                                ; gc_ctrl_emulator   ; work         ;
 ;          |pulsewidth_encoder:pwe_inst|             ; 126 (126)           ; 117 (115)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|gc_ctrl_emulator:gc_ctrl_emulator_inst|pulsewidth_encoder:pwe_inst                                                                    ; pulsewidth_encoder ; work         ;
 ;             |dcl_sync:data_sync_inst|              ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|gc_ctrl_emulator:gc_ctrl_emulator_inst|pulsewidth_encoder:pwe_inst|dcl_sync:data_sync_inst                                            ; dcl_sync           ; work         ;
-;       |input_interceptor:keys_inst|                ; 17 (17)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|input_interceptor:keys_inst                                                                                                           ; input_interceptor  ; work         ;
-;       |input_interceptor:switches_inst|            ; 44 (44)             ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|input_interceptor:switches_inst                                                                                                       ; input_interceptor  ; work         ;
+;       |input_interceptor:keys_inst|                ; 20 (20)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|input_interceptor:keys_inst                                                                                                           ; input_interceptor  ; work         ;
+;       |input_interceptor:switches_inst|            ; 53 (53)             ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|input_interceptor:switches_inst                                                                                                       ; input_interceptor  ; work         ;
 ;       |output_reader:hex_segments_inst|            ; 64 (64)             ; 65 (65)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|output_reader:hex_segments_inst                                                                                                       ; output_reader      ; work         ;
 ;       |output_reader:ledg_inst|                    ; 9 (9)               ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|output_reader:ledg_inst                                                                                                               ; output_reader      ; work         ;
 ;       |output_reader:ledr_inst|                    ; 18 (18)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|output_reader:ledr_inst                                                                                                               ; output_reader      ; work         ;
@@ -256,6 +260,8 @@ https://fpgasoftware.intel.com/eula.
 ;          |dcl_fifo:tx_fifo|                        ; 68 (68)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo                                                                                     ; dcl_fifo           ; work         ;
 ;          |dcl_uart_rx_fsm:rx_inst|                 ; 119 (119)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_uart_rx_fsm:rx_inst                                                                              ; dcl_uart_rx_fsm    ; work         ;
 ;          |dcl_uart_tx_fsm:tx_inst|                 ; 48 (48)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_uart_tx_fsm:tx_inst                                                                              ; dcl_uart_tx_fsm    ; work         ;
+;    |top:top_inst|                                  ; 77 (56)             ; 18 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|top:top_inst                                                                                                                                                 ; top                ; work         ;
+;       |simplecalc:uut|                             ; 21 (21)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|top:top_inst|simplecalc:uut                                                                                                                                  ; simplecalc         ; work         ;
 +----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -276,12 +282,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1166  ;
+; Total registers                              ; 1184  ;
 ; Number of registers using Synchronous Clear  ; 117   ;
 ; Number of registers using Synchronous Load   ; 91    ;
-; Number of registers using Asynchronous Clear ; 855   ;
+; Number of registers using Asynchronous Clear ; 873   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 614   ;
+; Number of registers using Clock Enable       ; 630   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -291,6 +297,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                             ; Fan out ;
 +-------------------------------------------------------------------------------------------------------------------------------+---------+
+; top:top_inst|simplecalc:uut|lastOperand2                                                                                      ; 1       ;
+; top:top_inst|simplecalc:uut|lastOperand1                                                                                      ; 1       ;
 ; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo|empty_int                                          ; 5       ;
 ; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|empty_int                                            ; 15      ;
 ; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[10] ; 1       ;
@@ -330,7 +338,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:rx_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[22]   ; 1       ;
 ; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|\rx_synchronizer:rx_sync_vector[2]                                    ; 6       ;
 ; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|\rx_synchronizer:rx_sync_vector[1]                                    ; 1       ;
-; Total number of inverted registers = 39                                                                                       ;         ;
+; Total number of inverted registers = 41                                                                                       ;         ;
 +-------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -466,6 +474,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------+--------------------+------+----+
 
 
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: top:top_inst|simplecalc:uut ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; data_width     ; 8     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +---------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: dbg_core:dbg_core_inst ;
 +----------------+----------+-----------------------------------------+
@@ -485,13 +503,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; blackbox                   ; 1                      ;
 ;     dbg_core:dbg_core_inst ; 1                      ;
 ; boundary_port              ; 221                    ;
+; cycloneiii_ff              ; 18                     ;
+;     CLR                    ; 2                      ;
+;     ENA CLR                ; 16                     ;
 ; cycloneiii_io_obuf         ; 27                     ;
-; cycloneiii_lcell_comb      ; 2                      ;
-;     normal                 ; 2                      ;
-;         0 data inputs      ; 2                      ;
+; cycloneiii_lcell_comb      ; 78                     ;
+;     arith                  ; 8                      ;
+;         2 data inputs      ; 1                      ;
+;         3 data inputs      ; 7                      ;
+;     normal                 ; 70                     ;
+;         0 data inputs      ; 1                      ;
+;         1 data inputs      ; 2                      ;
+;         2 data inputs      ; 25                     ;
+;         4 data inputs      ; 42                     ;
 ;                            ;                        ;
-; Max LUT depth              ; 0.00                   ;
-; Average LUT depth          ; 0.00                   ;
+; Max LUT depth              ; 4.70                   ;
+; Average LUT depth          ; 1.96                   ;
 +----------------------------+------------------------+
 
 
@@ -510,7 +537,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition
-    Info: Processing started: Wed Dec  4 18:41:49 2024
+    Info: Processing started: Thu Dec  5 12:27:16 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dbg_top -c dbg_top
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 0 entities, in source file /homes/m12326119/hwmod_ws2024/lib/math/src/math_pkg.vhd
@@ -533,35 +560,39 @@ Info (12021): Found 1 design units, including 1 entities, in source file /homes/
     Info (12023): Found entity 1: dbg_core File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
 Info (12127): Elaborating entity "dbg_top" for the top level hierarchy
 Info (12128): Elaborating entity "top" for hierarchy "top:top_inst" File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 144
+Info (12128): Elaborating entity "simplecalc" for hierarchy "top:top_inst|simplecalc:uut" File: /homes/m12326119/hwmod_ws2024/chapter2/simplecalc/top_arch.vhd Line: 15
+Warning (10492): VHDL Process Statement warning at simplecalc.vhd(64): signal "sub" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /homes/m12326119/hwmod_ws2024/chapter2/simplecalc/src/simplecalc.vhd Line: 64
 Info (12128): Elaborating entity "dbg_core" for hierarchy "dbg_core:dbg_core_inst" File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 197
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "gc_data" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 19
-    Warning (13040): bidirectional pin "sram_dq[15]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
-    Warning (13040): bidirectional pin "sram_dq[14]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
-    Warning (13040): bidirectional pin "sram_dq[13]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
-    Warning (13040): bidirectional pin "sram_dq[12]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
-    Warning (13040): bidirectional pin "sram_dq[11]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
-    Warning (13040): bidirectional pin "sram_dq[10]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
-    Warning (13040): bidirectional pin "sram_dq[9]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
-    Warning (13040): bidirectional pin "sram_dq[8]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
-    Warning (13040): bidirectional pin "sram_dq[7]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
-    Warning (13040): bidirectional pin "sram_dq[6]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
-    Warning (13040): bidirectional pin "sram_dq[5]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
-    Warning (13040): bidirectional pin "sram_dq[4]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
-    Warning (13040): bidirectional pin "sram_dq[3]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
-    Warning (13040): bidirectional pin "sram_dq[2]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
-    Warning (13040): bidirectional pin "sram_dq[1]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
     Warning (13040): bidirectional pin "sram_dq[0]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
+    Warning (13040): bidirectional pin "sram_dq[1]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
+    Warning (13040): bidirectional pin "sram_dq[2]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
+    Warning (13040): bidirectional pin "sram_dq[3]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
+    Warning (13040): bidirectional pin "sram_dq[4]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
+    Warning (13040): bidirectional pin "sram_dq[5]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
+    Warning (13040): bidirectional pin "sram_dq[6]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
+    Warning (13040): bidirectional pin "sram_dq[7]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
+    Warning (13040): bidirectional pin "sram_dq[8]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
+    Warning (13040): bidirectional pin "sram_dq[9]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
+    Warning (13040): bidirectional pin "sram_dq[10]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
+    Warning (13040): bidirectional pin "sram_dq[11]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
+    Warning (13040): bidirectional pin "sram_dq[12]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
+    Warning (13040): bidirectional pin "sram_dq[13]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
+    Warning (13040): bidirectional pin "sram_dq[14]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
+    Warning (13040): bidirectional pin "sram_dq[15]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 23
     Warning (13040): bidirectional pin "wm8731_sdat" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 31
     Warning (13040): bidirectional pin "wm8731_sclk" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 32
-    Warning (13040): bidirectional pin "char_lcd_data[7]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 45
-    Warning (13040): bidirectional pin "char_lcd_data[6]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 45
-    Warning (13040): bidirectional pin "char_lcd_data[5]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 45
-    Warning (13040): bidirectional pin "char_lcd_data[4]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 45
-    Warning (13040): bidirectional pin "char_lcd_data[3]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 45
-    Warning (13040): bidirectional pin "char_lcd_data[2]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 45
-    Warning (13040): bidirectional pin "char_lcd_data[1]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 45
     Warning (13040): bidirectional pin "char_lcd_data[0]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 45
+    Warning (13040): bidirectional pin "char_lcd_data[1]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 45
+    Warning (13040): bidirectional pin "char_lcd_data[2]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 45
+    Warning (13040): bidirectional pin "char_lcd_data[3]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 45
+    Warning (13040): bidirectional pin "char_lcd_data[4]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 45
+    Warning (13040): bidirectional pin "char_lcd_data[5]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 45
+    Warning (13040): bidirectional pin "char_lcd_data[6]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 45
+    Warning (13040): bidirectional pin "char_lcd_data[7]" has no driver File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 45
+Info (13000): Registers with preset signals will power-up high File: /homes/m12326119/hwmod_ws2024/chapter2/simplecalc/src/simplecalc.vhd Line: 28
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "emulated_gc_data~synth" File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 56
 Warning (13024): Output pins are stuck at VCC or GND
@@ -579,48 +610,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "hex1[4]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 10
     Warning (13410): Pin "hex1[5]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 10
     Warning (13410): Pin "hex1[6]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 10
-    Warning (13410): Pin "hex2[0]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 11
-    Warning (13410): Pin "hex2[1]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 11
-    Warning (13410): Pin "hex2[2]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 11
-    Warning (13410): Pin "hex2[3]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 11
-    Warning (13410): Pin "hex2[4]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 11
-    Warning (13410): Pin "hex2[5]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 11
-    Warning (13410): Pin "hex2[6]" is stuck at VCC File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 11
-    Warning (13410): Pin "hex3[0]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 12
-    Warning (13410): Pin "hex3[1]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 12
-    Warning (13410): Pin "hex3[2]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 12
-    Warning (13410): Pin "hex3[3]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 12
-    Warning (13410): Pin "hex3[4]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 12
-    Warning (13410): Pin "hex3[5]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 12
-    Warning (13410): Pin "hex3[6]" is stuck at VCC File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 12
-    Warning (13410): Pin "hex4[0]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 13
-    Warning (13410): Pin "hex4[1]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 13
-    Warning (13410): Pin "hex4[2]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 13
-    Warning (13410): Pin "hex4[3]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 13
-    Warning (13410): Pin "hex4[4]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 13
-    Warning (13410): Pin "hex4[5]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 13
-    Warning (13410): Pin "hex4[6]" is stuck at VCC File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 13
-    Warning (13410): Pin "hex5[0]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 14
-    Warning (13410): Pin "hex5[1]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 14
-    Warning (13410): Pin "hex5[2]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 14
-    Warning (13410): Pin "hex5[3]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 14
-    Warning (13410): Pin "hex5[4]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 14
-    Warning (13410): Pin "hex5[5]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 14
-    Warning (13410): Pin "hex5[6]" is stuck at VCC File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 14
-    Warning (13410): Pin "hex6[0]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 15
-    Warning (13410): Pin "hex6[1]" is stuck at VCC File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 15
-    Warning (13410): Pin "hex6[2]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 15
-    Warning (13410): Pin "hex6[3]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 15
-    Warning (13410): Pin "hex6[4]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 15
-    Warning (13410): Pin "hex6[5]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 15
-    Warning (13410): Pin "hex6[6]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 15
-    Warning (13410): Pin "hex7[0]" is stuck at VCC File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 16
-    Warning (13410): Pin "hex7[1]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 16
-    Warning (13410): Pin "hex7[2]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 16
-    Warning (13410): Pin "hex7[3]" is stuck at VCC File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 16
-    Warning (13410): Pin "hex7[4]" is stuck at VCC File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 16
-    Warning (13410): Pin "hex7[5]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 16
-    Warning (13410): Pin "hex7[6]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 16
     Warning (13410): Pin "ledg[0]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 17
     Warning (13410): Pin "ledg[1]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 17
     Warning (13410): Pin "ledg[2]" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 17
@@ -731,7 +720,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "char_lcd_blon" is stuck at GND File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 50
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (144001): Generated suppressed messages file /homes/m12326119/hwmod_ws2024/chapter2/simplecalc/quartus/output_files/dbg_top.map.smsg
-Info (35026): Attempting to remove 230 I/O cell(s) that do not connect to top-level pins or have illegal connectivity
+Info (35026): Attempting to remove 232 I/O cell(s) that do not connect to top-level pins or have illegal connectivity
     Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|emulated_tx~output"
     Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|emulated_tx"
     Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[0]~output"
@@ -778,6 +767,8 @@ Info (35026): Attempting to remove 230 I/O cell(s) that do not connect to top-le
     Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|keys_output[2]"
     Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|keys_output[3]~output"
     Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|keys_output[3]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|clk~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|clk"
     Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[63]~input"
     Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[63]"
     Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[61]~input"
@@ -964,7 +955,7 @@ Info (35026): Attempting to remove 230 I/O cell(s) that do not connect to top-le
     Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|emulated_rx"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (35003): Optimize away 139 nodes that do not fanout to OUTPUT or BIDIR pins
+Info (35003): Optimize away 127 nodes that do not fanout to OUTPUT or BIDIR pins
     Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_u2o1:auto_generated|ram_block1a0" File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
     Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_u2o1:auto_generated|ram_block1a1" File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
     Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_u2o1:auto_generated|ram_block1a2" File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
@@ -999,16 +990,16 @@ Info (35003): Optimize away 139 nodes that do not fanout to OUTPUT or BIDIR pins
     Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|tx_data[7]" File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "snes_data" File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 22
-Info (21057): Implemented 2752 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2856 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 27 input pins
     Info (21059): Implemented 166 output pins
     Info (21060): Implemented 28 bidirectional pins
-    Info (21061): Implemented 2507 logic cells
+    Info (21061): Implemented 2611 logic cells
     Info (21064): Implemented 24 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 197 warnings
-    Info: Peak virtual memory: 447 megabytes
-    Info: Processing ended: Wed Dec  4 18:41:53 2024
-    Info: Elapsed time: 00:00:04
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 156 warnings
+    Info: Peak virtual memory: 492 megabytes
+    Info: Processing ended: Thu Dec  5 12:27:21 2024
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:09
 
 

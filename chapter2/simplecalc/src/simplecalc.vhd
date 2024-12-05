@@ -33,11 +33,12 @@ begin
 		if res_n = '0' then
 			operand1 <= (others => '0');
 			lastOperand1 <= '1';
-		elsif rising_edge(clk) and lastOperand1 = '1' and store_operand1 = '0' then
-			operand1 <= operand_data_in;
+		elsif rising_edge(clk) then
+			if lastOperand1 = '1' and store_operand1 = '0' then
+				operand1 <= operand_data_in;
+			end if;
+			lastOperand1 <= store_operand1;
 		end if;
-
-		lastOperand1 <= store_operand1;
 
 	end process;
 
@@ -46,11 +47,12 @@ begin
 		if res_n = '0' then
 			operand2 <= (others => '0');
 			lastOperand2 <= '1';
-		elsif rising_edge(clk) and lastOperand2 = '1' and store_operand2 = '0' then
-			operand2 <= operand_data_in;
+		elsif rising_edge(clk) then
+			if lastOperand2 = '1' and store_operand2 = '0' then
+				operand2 <= operand_data_in;
+			end if;
+			lastOperand2 <= store_operand2;
 		end if;
-
-		lastOperand2 <= store_operand2;
 
 	end process;
 

@@ -1,5 +1,5 @@
 EDA Netlist Writer report for dbg_top
-Wed Dec  4 18:42:09 2024
+Thu Dec  5 12:27:37 2024
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Dec  4 18:42:09 2024 ;
+; EDA Netlist Writer Status ; Successful - Thu Dec  5 12:27:37 2024 ;
 ; Revision Name             ; dbg_top                               ;
 ; Top-level Entity Name     ; dbg_top                               ;
 ; Family                    ; Cyclone IV E                          ;
@@ -81,13 +81,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition
-    Info: Processing started: Wed Dec  4 18:42:09 2024
+    Info: Processing started: Thu Dec  5 12:27:36 2024
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off dbg_top -c dbg_top
 Info (204019): Generated file dbg_top.vho in folder "/homes/m12326119/hwmod_ws2024/chapter2/simplecalc/quartus/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 624 megabytes
-    Info: Processing ended: Wed Dec  4 18:42:09 2024
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 627 megabytes
+    Info: Processing ended: Thu Dec  5 12:27:37 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 

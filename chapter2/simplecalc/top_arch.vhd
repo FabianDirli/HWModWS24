@@ -11,7 +11,7 @@ architecture top_arch_simplecalc of top is
 	signal result   : std_ulogic_vector(DATA_WIDTH-1 downto 0) := (others => '0');
 begin
 	
-	/*
+	
 	uut : entity work.simplecalc
 	generic map(
 		DATA_WIDTH => DATA_WIDTH
@@ -27,12 +27,12 @@ begin
 		operand2 => operand2,
 		result => result
 	);
-	*/
-	operand1 <= "01000110";
+	
 	hex7 <= to_segs(operand1(7 downto 4));
 	hex6 <= to_segs(operand1(3 downto 0));
 	hex5 <= to_segs(operand2(7 downto 4));
 	hex4 <= to_segs(operand2(3 downto 0));
 	hex3 <= to_segs(result(7 downto 4));
 	hex2 <= to_segs(result(3 downto 0));
+	
 end architecture;

@@ -6,18 +6,16 @@ entity generic_adder_tb is
 	generic (
 		TESTMODE : string := "exhaustive"
 	);
+	
+end entity;
+
+architecture bench of generic_adder_tb is
 	constant N : positive := 8;
 	signal A    : std_ulogic_vector(N-1 downto 0);
 	signal B    : std_ulogic_vector(N-1 downto 0);
 
 	signal S    : std_ulogic_vector(N-1 downto 0);
 	signal Cout : std_ulogic;
-	
-
-
-end entity;
-
-architecture bench of generic_adder_tb is
 begin
 
 	exhaustive_gen : if TESTMODE = "exhaustive" generate
@@ -63,6 +61,39 @@ begin
 		end process;
 
 	end generate;
-	
+
+	fibonaci_gen : if TESTMODE = "fibonacci" generate
+
+		uut : entity work.generic_adder
+		generic map (
+			N => 32
+		)
+		port map (
+			A => A,
+			B => B,
+			S => S,
+			Cout => Cout
+		);
+
+		fibonacci_p : process
+			signal x, y, z : natural;
+		begin
+
+			x <= 0;
+			y <= 1;
+			z <= 1;
+
+			while Cout /= '1' loop
+				A <= std_ulogic_vector(to_unsigned(x, N))
+				B <= y;
+				z <= to_integer(unsigned(S));
+				
+
+			end loop;
+			wait;
+		end process;
+
+	end generate;
+
 end architecture;
 

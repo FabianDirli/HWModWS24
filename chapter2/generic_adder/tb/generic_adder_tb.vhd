@@ -4,22 +4,23 @@ use ieee.numeric_std.all;
 
 entity generic_adder_tb is
 	generic (
-		TESTMODE : string := "exhaustive"
+		TESTMODE : string := "fibonaasdcci"
 	);
 	
 end entity;
 
 architecture bench of generic_adder_tb is
-	constant N : positive := 8;
-	signal A    : std_ulogic_vector(N-1 downto 0);
-	signal B    : std_ulogic_vector(N-1 downto 0);
-
-	signal S    : std_ulogic_vector(N-1 downto 0);
-	signal Cout : std_ulogic;
 begin
 
-	exhaustive_gen : if TESTMODE = "exhaustive" generate
+	testmode_gen : 
+	if exhaustive : TESTMODE = "exhaustive" generate
+		constant N : positive := 8;
+		signal A    : std_ulogic_vector(N-1 downto 0);
+		signal B    : std_ulogic_vector(N-1 downto 0);
 
+		signal S    : std_ulogic_vector(N-1 downto 0);
+		signal Cout : std_ulogic;
+	begin
 		uut : entity work.generic_adder
 		generic map (
 			N => 8
@@ -60,13 +61,19 @@ begin
 			wait;
 		end process;
 
-	end generate;
+	elsif fibonacci : TESTMODE = "fibonacci" generate
+		constant N : positive := 32;
+		signal A    : std_ulogic_vector(N-1 downto 0);
+		signal B    : std_ulogic_vector(N-1 downto 0);
 
-	fibonaci_gen : if TESTMODE = "fibonacci" generate
-
+		signal S    : std_ulogic_vector(N-1 downto 0);
+		signal Cout : std_ulogic;
+		signal x, y : std_ulogic_vector(N-1 downto 0);
+		signal steps : natural := 0;
+	begin
 		uut : entity work.generic_adder
 		generic map (
-			N => 32
+			N => N
 		)
 		port map (
 			A => A,
@@ -76,24 +83,35 @@ begin
 		);
 
 		fibonacci_p : process
-			signal x, y, z : natural;
 		begin
 
-			x <= 0;
-			y <= 1;
-			z <= 1;
+			x <= (others => '0');
+			y <= (0 => '1', others => '0');
+			wait for 1 ns;
 
 			while Cout /= '1' loop
-				A <= std_ulogic_vector(to_unsigned(x, N))
+				A <= x;
 				B <= y;
-				z <= to_integer(unsigned(S));
-				
+				wait for 1 ns;	
+
+				x <= B;
+				y <= S;	
+				wait for 1 ns;
+				steps <= steps + 1;
 
 			end loop;
+			report "Fibonacci number is 2^32 + " & to_string(to_integer(unsigned(S))) & " and took " & to_string(n) & " steps." severity Error;
 			wait;
 		end process;
-
-	end generate;
+	else error : generate
+	begin
+		asd : process
+		begin
+			report "asd" severity error;
+			--report "No suitable testmode to execute for '" & TESTMODE & "'. Choose beetween 'exhaustive' and 'fibonacci'" severity Error;
+			wait;
+		end process;
+	end generate; 
 
 end architecture;
 

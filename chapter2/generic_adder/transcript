@@ -1,6 +1,6 @@
-# vsim generic_adder_tb -nowlflock -msgmode both -GTESTMODE=exhaustive
-# vsim generic_adder_tb -nowlflock -msgmode both -GTESTMODE=exhaustive 
-# Start time: 14:17:41 on Dec 05,2024
+# vsim generic_adder_tb -nowlflock -msgmode both 
+# vsim generic_adder_tb -nowlflock -msgmode both 
+# Start time: 12:27:22 on Dec 07,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
 # Use vdir -l command to find such design units.
@@ -25,6 +25,8 @@
 # Loading ieee.numeric_std(body)
 # Loading work.generic_adder_tb(bench)#1
 #  run -all
+# ** Note: Fibonacci number is 2^32 + 512559680 and took 32 steps.
+#    Time: 95 ns  Iteration: 0  Region: /generic_adder_tb/testmode_gen
 # quit
-# End time: 14:17:42 on Dec 05,2024, Elapsed time: 0:00:01
+# End time: 12:27:22 on Dec 07,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1

@@ -128,7 +128,7 @@ The final goal of this task is to run your design on a board.
 To achieve this, instantiate your `stopwatch`/`timer` and `bin2dec` implementations in [`top_arch.vhd`](top_arch.vhd).
 Use `keys(0)` as active-low reset and the other keys for controlling the `stopwatch`/`timer` (for the `timer` you also need the switches).
 Show the output of `seconds` / `seconds_out` on `ledr`, as well as on the seven-segment displays (`hex0-7`) using your `bin2dec` implementation.
-Use the right-most ssd displays (set the generics of your modules accordingly), all other ssd display shall be turned off (`SSD_CHAR_OFF` constant)
+Use the four right-most ssd displays (set the generics of your modules accordingly), all other ssd display shall be turned off (`SSD_CHAR_OFF` constant).
 
 First try to synthesize your design using the regular 50 MHz board clock, `clk`.
 The tools will report that timing requirements are not met, due to a combinational path being too long.

@@ -16,9 +16,34 @@ entity lfsr is
 end entity;
 
 architecture arch of lfsr is
-	-- Add signals as required
+	Signal mem : std_ulogic_vector(LFSR_WIDTH-1 downto 0);
+	Signal xor_out : std_ulogic := 0;
 begin
 
-	-- Implement LFSR
+	xor_p : process 
+	begin
+		for i in N-1 downto 0 loop
+			if POLYNOMIAL(i) = '1' then
+				xor_out <= xor_out xor seed(i);
+			end if;
+		end loop;
+	end process;
+
+	shiftRegister_p : process (clk, res_n, load_seed_n)
+	begin
+
+		if res_n = '0' then
+			mem <= (others => '0');
+			xor_out <= '0';
+		elsif load_seed_n = '0' then
+			mem <= seed;
+		elsif rising_edge(clk) then
+			mem <= shift_left(unsigned(mem), 1);
+			mem(0) <= xor_out;
+			if load_seed_n '1' then
+				prdata <= mem(LFSR_WIDTH-1);
+		end if;
+
+	end process;
 
 end architecture;

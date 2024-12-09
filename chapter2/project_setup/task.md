@@ -409,7 +409,7 @@ This will show you your design after the technology mapping.
 Find the `demo` module and make a screenshot of its implementation.
 Also: By right-clicking on a logic element you can view the configuration of its LUT (via `Properties`).
 Make a screenshot showing both, the implementation of the module and the truth table of a logic element inside it.
-Name it `demo.png` and put it into the task folder (make sure that it was included with the upload!).
+Name it `demo.png` and put it into the task folder.
 
 Furthermore, we will ask you during the exercise presentation to demonstrate the whole flow of this task, including the download to the board.
 Therefore, ensure that you are familiar with the Makefile targets and the RPA tools.

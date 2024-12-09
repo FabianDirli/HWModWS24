@@ -84,6 +84,7 @@ Check if the `simple_dp_ram` is able to store words and to read previously store
 
 Make sure that Quartus successfully inferred a RAM block and that the design is, hence, synthesized correctly (box denoted with `SYNC_RAM`).
 To do so open Quartus' RTL viewer and search for your entity, revealing its internals by clicking on it.
+You can do this via `Tools->Netlist Viewers->RTL Viewer`.
 Make a screenshot of your entity while expanded, such that the RAM blocks are visible and place it in the file `screenshots/1.png`.
 
 ## Simple dual-port RAM with Reset

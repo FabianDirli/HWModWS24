@@ -1,0 +1,62 @@
+Info: *******************************************************************
+Info: Running Quartus Prime Shell
+    Info: Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition
+    Info: Copyright (C) 2023  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Mon Dec  9 15:40:50 2024
+Info: Command: quartus_sh --flow compile quartus/dbg_top.qpf
+Info: Quartus(args): compile quartus/dbg_top.qpf
+Info: Project Name = /homes/m12326119/hwmod_ws2024/chapter2/lfsr/quartus/dbg_top
+Info: Revision Name = dbg_top
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition
+    Info: Processing started: Mon Dec  9 15:40:50 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dbg_top -c dbg_top
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 2 design units, including 0 entities, in source file /homes/m12326119/hwmod_ws2024/lib/math/src/math_pkg.vhd
+    Info (12022): Found design unit 1: math_pkg File: /homes/m12326119/hwmod_ws2024/lib/math/src/math_pkg.vhd Line: 2
+    Info (12022): Found design unit 2: math_pkg-body File: /homes/m12326119/hwmod_ws2024/lib/math/src/math_pkg.vhd Line: 11
+Info (12021): Found 2 design units, including 0 entities, in source file /homes/m12326119/hwmod_ws2024/lib/util/src/util_pkg.vhd
+    Info (12022): Found design unit 1: util_pkg File: /homes/m12326119/hwmod_ws2024/lib/util/src/util_pkg.vhd Line: 5
+    Info (12022): Found design unit 2: util_pkg-body File: /homes/m12326119/hwmod_ws2024/lib/util/src/util_pkg.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd
+    Info (12022): Found design unit 1: dbg_top-dbg_top_arch File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 61
+    Info (12023): Found entity 1: dbg_top File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /homes/m12326119/hwmod_ws2024/lib/top/src/top.vhd
+    Info (12023): Found entity 1: top File: /homes/m12326119/hwmod_ws2024/lib/top/src/top.vhd Line: 4
+Info (12021): Found 1 design units, including 0 entities, in source file /homes/m12326119/hwmod_ws2024/chapter2/lfsr/top_arch.vhd
+    Info (12022): Found design unit 1: top-top_arch File: /homes/m12326119/hwmod_ws2024/chapter2/lfsr/top_arch.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /homes/m12326119/hwmod_ws2024/chapter2/lfsr/src/lfsr.vhd
+    Info (12022): Found design unit 1: lfsr-arch File: /homes/m12326119/hwmod_ws2024/chapter2/lfsr/src/lfsr.vhd Line: 19
+    Info (12023): Found entity 1: lfsr File: /homes/m12326119/hwmod_ws2024/chapter2/lfsr/src/lfsr.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_core.qxp
+    Info (12023): Found entity 1: dbg_core File: /homes/m12326119/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+Error (10327): VHDL error at lfsr.vhd(33): can't determine definition of operator ""sll"" -- found 0 possible definitions File: /homes/m12326119/hwmod_ws2024/chapter2/lfsr/src/lfsr.vhd Line: 33
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 0 warnings
+    Error: Peak virtual memory: 420 megabytes
+    Error: Processing ended: Mon Dec  9 15:40:54 2024
+    Error: Elapsed time: 00:00:04
+    Error: Total CPU time (on all processors): 00:00:09
+Error (293001): Quartus Prime Full Compilation was unsuccessful. 3 errors, 0 warnings
+Error: Flow compile (for project /homes/m12326119/hwmod_ws2024/chapter2/lfsr/quartus/dbg_top) was not successful
+Error: ERROR: Error(s) found while running an executable. See report file(s) for error message(s). Message log indicates which executable was run last.
+
+Error (23031): Evaluation of Tcl script /opt/quartus_22.1std/quartus/common/tcl/internal/qsh_flow.tcl unsuccessful
+Error: Quartus Prime Shell was unsuccessful. 10 errors, 0 warnings
+    Error: Peak virtual memory: 491 megabytes
+    Error: Processing ended: Mon Dec  9 15:40:55 2024
+    Error: Elapsed time: 00:00:05
+    Error: Total CPU time (on all processors): 00:00:09

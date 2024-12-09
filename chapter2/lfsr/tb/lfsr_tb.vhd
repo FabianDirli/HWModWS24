@@ -15,7 +15,7 @@ architecture tb of lfsr_tb is
 	constant POLY_16     : std_ulogic_vector(15 downto 0) := "1101001100001000";
 
 	-- Change as required
-	signal POLYNOMIAL : std_ulogic_vector := MAX_POLY_16;
+	constant POLYNOMIAL : std_ulogic_vector := POLY_16;
 	constant LFSR_WIDTH : integer := POLYNOMIAL'LENGTH;
 
 	signal load_seed_n, en : std_ulogic;
@@ -24,52 +24,66 @@ architecture tb of lfsr_tb is
 
 	constant CLK_PERIOD : time := 20 ns;
 	signal shiftRegister : std_ulogic_vector(LFSR_WIDTH-1 downto 0) := (others => '0');
-	signal initalValue := std_ulogic_vector(LFSR_WIDTH-1 downto 0);
-	signal count : integer := 0;
-	signal minPeriod : integer := integer'high;
-	signal maxPeriod : integer := integer'low;
+	signal finished : boolean := false;
+
+
 begin
 
 	stimulus : process is
+		variable initalValue : std_ulogic_vector(LFSR_WIDTH-1 downto 0);
+		variable count : integer := 0;
+		variable minPeriod : integer := integer'high;
+		variable maxPeriod : integer := integer'low;
 	begin
 
-		res_n <= '0';
-		wait for 2*CLK_PERIOD;
-		res_n <= '1';
-
 		-- loop through seed
-		for i in 1 to 255 loop
+		for i in 678 to 750 loop
+			-- reset
+			res_n <= '0';
+			wait for 2*CLK_PERIOD;
+			res_n <= '1';
+			count := 0;
+
+			-- load seed
+			seed <= std_ulogic_vector(to_unsigned(i, seed'length));
+			load_seed_n <= '0';
+			wait for CLK_PERIOD;
+			load_seed_n <= '1';
+
 			-- fill shift register
-			wait for shiftRegister'LENGTH * CLK_PERIOD;
+			wait for shiftRegister'LENGTH * CLK_PERIOD ;
+			wait for CLK_PERIOD;
 			-- save inital value
-			initalValue <= shiftRegister;
+			initalValue := shiftRegister;
+			wait for CLK_PERIOD;
 
 			while shiftRegister /= initalValue loop
-				count <= count + 1;
+				wait until rising_edge(clk);
+				count := count + 1;
+				--report "state: " & to_string(unsigned(shiftRegister));
 			end loop;
 
+			report "seed: " & to_string(i) & ", period: " & to_string(count);
+
 			if count < minPeriod then
-				minPeriod <= count;
+				minPeriod := count;
 			end if;
 
 			if count > maxPeriod then
-				maxPeriod <= count;
+				maxPeriod := count;
 			end if;
-
 		end loop;
 
-
-		
-
-		-- Reset your module and apply stimuli
-
+		report "min period: " & to_string(minPeriod) & ", max period: " & to_string(maxPeriod);
+		finished <= true;
+		wait for 1 ns;
 		wait;
 	end process;
 
 	shiftRegister_p : process (clk)
 	begin
-		if rising_edge(clk) then
-			shiftRegister <= shiftRegister(shiftRegister'LENGTH downto 1) & prdata;
+		if rising_edge(clk) and load_seed_n = '1' then
+			shiftRegister <= shiftRegister(shiftRegister'LENGTH-2 downto 0) & prdata;
 		end if;
 	end process;
 
@@ -86,12 +100,15 @@ begin
 		prdata => prdata
 	);
 
-	clk_gen : process is
+	clk_gen : process
 	begin
-		clk <= '0';
-		wait for CLK_PERIOD/2;
-		clk <= '1';
-		wait for CLK_PERIOD/2;
+		while not finished loop
+			clk <= '0';
+			wait for CLK_PERIOD/2;
+			clk <= '1';
+			wait for CLK_PERIOD/2;
+		end loop;
+		wait;
 	end process;
 
 end architecture;

@@ -20,8 +20,6 @@ architecture arch of lfsr is
 	Signal mem : std_ulogic_vector(LFSR_WIDTH-1 downto 0);
 begin
 
-	prdata <= mem(LFSR_WIDTH-1);
-
 	shiftRegister_p : process (clk, res_n, load_seed_n)
 		variable xor_out : std_ulogic := '0';
 		variable shifted_mem : std_ulogic_vector(LFSR_WIDTH-1 downto 0);
@@ -31,7 +29,8 @@ begin
 			mem <= (others => '0');
 		elsif rising_edge(clk) then
 			if load_seed_n = '1' then
-				shifted_mem := mem(LFSR_WIDTH-2 downto 0) & '0';
+				prdata <= mem(LFSR_WIDTH-1);
+				shifted_mem := mem sll 1;
 				xor_out := '0';
 				for i in POLYNOMIAL'length-1 downto 0 loop
 					if POLYNOMIAL(i) = '1' then
@@ -43,6 +42,7 @@ begin
 			elsif load_seed_n = '0' then
 				mem <= seed;
 			end if;
+			report "SSSSS State: " & to_string(unsigned(mem));
 		end if;
 	end process;
 

@@ -6,7 +6,6 @@ architecture top_arch of top is
 	constant POLY : std_ulogic_vector(7 downto 0) := "10111000";
 	signal res_n : std_ulogic;
 	signal prdata : std_ulogic;
-	signal currentState : std_ulogic;
 begin
 
 	res_n <= keys(0);
@@ -25,18 +24,5 @@ begin
 	);
 
 	-- set ledr(0) to prdata when keys(2) pressed
-	ledr(0) <= currentState;
-	
-	process (clk)
-	begin
-		if res_n = '0' then
-			currentState <= '1';
-		elsif rising_edge(clk) then
-			if keys(2) = '0' then
-				currentState <= prdata;
-			end if;
-		end if;
-	end process;
-	
 
 end architecture;

@@ -45,9 +45,9 @@ end entity;
 The generic `LFSR_WIDTH` defines the width of the LFSR, i.e., the number of flip-flops in the shift register.
 `POLYNOMIAL` is the LFSR's generator polynomial.
 Consider the example in the above intro to see how this generic encodes a polynomial and how it shall be used.
-When `load_seed_n` is low, the module loads the value applied at `seed` into its internal shift register.
+When `load_seed_n` is low during a clock cycle, the module loads the value applied at `seed` into its internal shift register.
 This allows initializing the LFSR.
-Whenever `load_seed_n` is high in a cycle, `prdata` outputs a new pseudo random bit.
+Whenever `load_seed_n` is high in a clock cycle, `prdata` outputs a new pseudo random bit.
 
 ### Testbench
 Write a testbench `lfsr_tb` (use the template in [`tb/lfsr_tb.vhd`](tb/lfsr_tb.vhd)) that monitors the output sequence of `prdata`, determining the maximum and minimum period of the output sequence for a particular ``POLYNOMIAL`` and a range of `seed` values.

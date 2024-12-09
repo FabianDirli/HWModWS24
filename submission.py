@@ -36,7 +36,7 @@ def message(msg: str):
 def usage():
 	print(textwrap.dedent("""\
 		HWMod Homework Submission Script
-		
+
 		./submission.py CHAPTER TASKS ...
 
 		Usage examples:
@@ -52,7 +52,7 @@ def usage():
 def create_submission_archive(chapter: str, tasks: list[str]):
 	chapter_dir = pathlib.Path(chapter).absolute()
 	init_slog(f"{chapter_dir}/submission.log")
-	
+
 	chapter = chapter_dir.name
 
 	if not pathlib.Path(f"{chapter_dir}/.tasks.json").exists():
@@ -73,7 +73,7 @@ def create_submission_archive(chapter: str, tasks: list[str]):
 	for task in tasks:
 		if task not in task_data:
 			error(f"There is no task named '{task}'. Valid tasks are {', '.join(task_data.keys())}")
-		
+
 		task_dir = pathlib.Path(f"{chapter_dir}/{task}")
 		os.system(f"make clean -C {task_dir} > /dev/null")
 		r = os.system(f"make compile -C {task_dir} > /dev/null")
@@ -101,16 +101,17 @@ def create_submission_archive(chapter: str, tasks: list[str]):
 		total_expected = sum(task_data[task]["vhd"].values())
 		total_actual = sum(vhd_files.values())
 
-		if total_expected - total_actual == 0:
-			error(f"You don't have a solution for task '{task}'. If you think this is an error please contact the teaching staff!")
-		if abs(total_expected-total_actual) < 5:
-			warning(f"You want to submit task '{task}'. However, it seems that you don't have a solution for it! Is this a mistake?")
+		if not task_data[task]["disable_vhd_line_check"]:
+			if total_expected - total_actual == 0:
+				error(f"You don't have a solution for task '{task}'. If you think this is an error please contact the teaching staff!")
+			if abs(total_expected-total_actual) < 5:
+				warning(f"You want to submit task '{task}'. However, it seems that you don't have a solution for it! Is this a mistake?")
 
 		new_files = task_data[task]["new_files"]
 		for file in new_files:
 			if not (task_dir / file).exists():
 				error(f"file {task}/{file} does not exist!")
-		
+
 		for check in task_data[task]["checks"]:
 			r = os.system(f"cd {task_dir} && {check['cmd']}")
 			if r != 0:
@@ -132,7 +133,7 @@ def main():
 	if len(sys.argv) < 3:
 		usage()
 		exit(1)
-	
+
 	d = sys.argv[1]
 	if not pathlib.Path(d).exists():
 		pritn(f"{d} does not exist!")

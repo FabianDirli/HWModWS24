@@ -30,6 +30,9 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
 !s11e vcom 2022.4 2022.10, Oct 18 2022
 13
 !s112 1.1
@@ -39,10 +42,10 @@ R0
 cModel Technology
 Z1 d/homes/m12326119/hwmod_ws2024/chapter2/simplecalc
 T_opt
-!s110 1733397544
-VBRi6MPBf1WlKEI;P[V6cB1
+!s110 1733759712
+V:lmjk]09^CVnEDQ8_LO>92
 04 13 5 work simplecalc_tb bench 1
-=1-000ae431a4f1-67518c28-3b158-30a85
+=1-000ae431a4f1-675712df-ef107-283cf1
 R0
 !s12b OEM100
 !s124 OEM100
@@ -51,7 +54,7 @@ tCvgOpt 0
 n@_opt
 OE;O;2022.4;75
 Pmath_pkg
-!i122 420
+!i122 440
 Z2 w1733322684
 R1
 Z3 8../../lib/math/src/math_pkg.vhd
@@ -63,9 +66,9 @@ V6o3iO_9IOLbIM`>0_K1dl3
 Z5 OE;C;2022.4;75
 33
 b1
-Z6 !s110 1733397543
+Z6 !s110 1733759711
 !i10b 1
-Z7 !s108 1733397543.000000
+Z7 !s108 1733759711.000000
 Z8 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|../../lib/math/src/math_pkg.vhd|
 Z9 !s107 ../../lib/math/src/math_pkg.vhd|
 !i113 0
@@ -73,7 +76,7 @@ Z10 o-suppress 1236 -O0 -check_synthesis -2008 -work work
 Z11 tExplicit 1 CvgOpt 0
 Bbody
 DPx4 work 8 math_pkg 0 22 6o3iO_9IOLbIM`>0_K1dl3
-!i122 420
+!i122 440
 l0
 L11 61
 VnZUPg`Y@B>LoN?b@VaKe=3
@@ -89,11 +92,11 @@ R9
 R10
 R11
 Esimplecalc
-Z12 w1733396592
+Z12 w1733759611
 Z13 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
 Z14 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
 Z15 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
-!i122 422
+!i122 442
 R1
 Z16 8src/simplecalc.vhd
 Z17 Fsrc/simplecalc.vhd
@@ -116,11 +119,11 @@ R13
 R14
 R15
 Z20 DEx4 work 10 simplecalc 0 22 ZKKScbciHmT7P:<Xc0fOo3
-!i122 422
+!i122 442
 l29
-L26 47
-VjzKg>]>Az^NaFC1^m5`d<3
-!s100 @jKFoF>Y=DZLBTRI;3@>[3
+L26 45
+V`ag`^H>zVP1;lnEkTMIN_1
+!s100 k@Mb_TTXBSTdCiKG:n5[m3
 R5
 33
 R6
@@ -132,11 +135,11 @@ R19
 R10
 R11
 Esimplecalc_tb
-Z21 w1733397542
+Z21 w1733759709
 R13
 R14
 R15
-!i122 423
+!i122 443
 R1
 Z22 8tb/simplecalc_tb.vhd
 Z23 Ftb/simplecalc_tb.vhd
@@ -160,11 +163,11 @@ R13
 R14
 R15
 DEx4 work 13 simplecalc_tb 0 22 D0@kggGR>GTnRJ<g6FjPO1
-!i122 423
+!i122 443
 l32
 L9 100
-VcV7aWYHi:neYE@7M?`;:42
-!s100 3dUMOYRFUIB_cY8mk9>862
+V`n]J7RkKcClA<o=AnZJmb0
+!s100 :KN5bXEkgC@KShRC73N]g3
 R5
 33
 R6
@@ -179,7 +182,7 @@ Etop
 R2
 R14
 R15
-!i122 424
+!i122 444
 R1
 8../../lib/top/src/top.vhd
 F../../lib/top/src/top.vhd
@@ -198,19 +201,20 @@ R7
 R10
 R11
 Atop_arch_simplecalc
-w1733394805
+w1733398033
+R20
 DEx4 work 3 top 0 22 Qlazc_WZm`;<ohecYm9FU1
 Z26 DPx4 work 8 util_pkg 0 22 _YC]h>;oNzLIHhZWKL8jc1
 R13
 R14
 R15
-!i122 425
+!i122 445
 8top_arch.vhd
 Ftop_arch.vhd
 l12
 L7 32
-VOa@mY[IWN:j^3f_EdSO3P2
-!s100 8MeeXY3DzbdAfPHbK3ij62
+VH;[TUPedM6<fmhBZ_I3ZJ1
+!s100 H]5AOnaU^0J^]?RBKKgN]0
 R5
 33
 R6
@@ -224,7 +228,7 @@ R11
 Putil_pkg
 R14
 R15
-!i122 421
+!i122 441
 R2
 R1
 Z27 8../../lib/util/src/util_pkg.vhd
@@ -248,7 +252,7 @@ Bbody
 R26
 R14
 R15
-!i122 421
+!i122 441
 l0
 L29 37
 V]`GBJ79K6b<9n?d=m7]i[2

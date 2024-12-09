@@ -56,16 +56,14 @@ begin
 
 	end process;
 
-
-	calc_p : process(clk, res_n, operand1, operand2)
-	begin
-		if res_n = '0' then
-			result <= (others => '0');
-		elsif sub = '0' then
+	calc_p : process (all)
+	begin	
+		if sub = '0' then
 			result <= std_ulogic_vector(unsigned(operand1) + unsigned(operand2));
 		else
 			result <= std_ulogic_vector(unsigned(operand1) - unsigned(operand2));
 		end if;
+		
 	end process;
 
 

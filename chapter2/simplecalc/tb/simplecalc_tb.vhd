@@ -82,7 +82,7 @@ begin
 				sub <= '0';
 			else 
 				report to_string(startValue1*(2**i)) & " + "  & to_string(startValue2*(2**i)) & " = " & to_string(to_integer(unsigned(result))); 
-				assert startValue1*(2**i) - startValue2*(2**i) = to_integer(unsigned(result)) report "WRONG" severity error;
+				assert startValue1*(2**i) + startValue2*(2**i) = to_integer(unsigned(result)) report "WRONG" severity error;
 				sub <= '1';
 			end if;
 			

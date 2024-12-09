@@ -10,14 +10,14 @@ from submission import create_submission_archive
 def main():
 	if len(sys.argv) < 2:
 		print(textwrap.dedent("""\
-		HWMod Homework I Submission Script
+		HWMod Homework II Submission Script
 
 		Usage examples:
-		  * Submit the tasks 'alu' and 'sram':
-		    ./submit.py alu sram
+		  * Submit the tasks 'lfsr' and 'watch':
+		    ./submit.py lfsr watch
 		  * Additional '/' charactars in the task names are ignored. Hence, you can
 		    also run:
-		    ./submit.py alu/ sram/
+		    ./submit.py lfsr/ watch/
 		  * Submit all tasks:
 		    ./submit.py -a"""))
 		#--------|---------|---------|---------|---------|---------|---------|---------|

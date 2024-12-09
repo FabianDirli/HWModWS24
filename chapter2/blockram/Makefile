@@ -14,7 +14,7 @@ include ../../util/simple_flow.mk
 include ../../util/quartus.mk
 
 check: gsim
-	@d=$$(sort -n -t ':' -k 1 tb/debugdata_in.txt | diff - tb/debugdata_out.txt);\
+	@d=$$(sort -n -t ':' -k 1 tb/debugdata_in.txt | diff - tb/debugdata_out.txt 2>&1);\
 	if [[ $$(printf "%s" $$d | wc -c) -ne 0 ]]; then \
 		echo "$$d";\
 		echo "check failed!";\

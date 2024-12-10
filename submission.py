@@ -124,7 +124,7 @@ def create_submission_archive(chapter: str, tasks: list[str]):
 	if total_points < 3:
 		error("You need to submit task worth at least 3 points!").py
 	slog.close()
-	os.system(f"cd {chapter_dir} && tar -czf submission.tar.gz {' '.join(tasks)} submission.log")
+	os.system(f"cd {chapter_dir} && tar -czf submission_{chapter}.tar.gz {' '.join(tasks)} submission.log")
 	print(f"Created submission archive: submission_{chapter}.tar.gz")
 	print("Please DO NOT forget to upload it to TUWEL!")
 

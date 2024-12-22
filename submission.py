@@ -104,17 +104,14 @@ def create_submission_archive_new(chapter: str, tasks: list[str]):
 		for file in task_data["files"]:
 			check_type = task_data["files"][file]["Type"]
 			if check_type == "DONT CARE" or check_type == "CONSTANT" or check_type == "COMPLETE":
-				print(f"Non-CREATE check {file}")
 				if not (task_dir / file).exists():
 					error(f"Missing expected file {task_dir / file} -- Please note that you are not allowed to delete the files we provide you with!")
 				elif check_type == "COMPLETE":
 					actual = task_data["files"][file]["Lines"]
 					total_actual += actual
-					print(f"COMPLETE check {actual}")
 					with open(task_dir / file, "rb") as submitted_file:
 						expected = len(submitted_file.readlines())
 						total_expected += expected
-						print(f"COMPLETE check {expected}")
 						if actual - expected == 0:
 							error(f"It seems like you did not implement {task_dir / file}. If you think this is an error please contact the teaching staff!")
 				elif check_type == "CONSTANT":

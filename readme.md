@@ -134,3 +134,9 @@ Your login credentials are the same as for the (local) TILab.
 | [watch](chapter2/watch/task.md) | 2 | registers, synthesis, timing analysis |
 | [blockram](chapter2/blockram/task.md) | 2 | memory, synthesis, inferred functions |
 
+## Chapter III
+
+| task | Points | Keywords (Topics) |
+|-|-|----|
+| [pwm](chapter3/pwm/task.md) | 2 | oscilloscope, synthesis, registers |
+

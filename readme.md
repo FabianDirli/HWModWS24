@@ -139,4 +139,5 @@ Your login credentials are the same as for the (local) TILab.
 | task | Points | Keywords (Topics) |
 |-|-|----|
 | [pwm](chapter3/pwm/task.md) | 2 | oscilloscope, synthesis, registers |
+| [running_light](chapter3/running_light/task.md) | 1 | finite state machine |
 

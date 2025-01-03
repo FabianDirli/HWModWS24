@@ -1,7 +1,7 @@
 
 # Running Light
 
-**Points:** 1 `|` **Keywords**: finite state machine
+**Points:** 1 `|` **Keywords**: fsm modeling, fsm implementation
 
 [[_TOC_]]
 

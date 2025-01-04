@@ -8,8 +8,8 @@ architecture arch of running_light_tb is
 	constant LEDS_WIDTH : integer := 8;
 	constant CLK_PERIOD : time := 20 ns;
 	signal stop_clk : boolean := false;
-	signal clk, res_n : std_logic;
-	signal leds : std_logic_vector(LEDS_WIDTH-1 downto 0);
+	signal clk, res_n : std_ulogic;
+	signal leds : std_ulogic_vector(LEDS_WIDTH-1 downto 0);
 begin
 
 

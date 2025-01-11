@@ -107,6 +107,12 @@ Your login credentials are the same as for the (local) TILab.
 |-|-|----|
 | [lfsr](demos/demo2/lfsr/task.md) | - | behavioral modeling, testbench |
 
+## Demonstration III
+
+| task | Points | Keywords (Topics) |
+|-|-|----|
+| [traffic_light](demos/demo3/traffic_light/task.md) | - | fsm modeling, fsm implementation |
+
 # Task Overview
 
 ## Chapter I

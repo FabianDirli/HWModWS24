@@ -112,7 +112,7 @@ Until then, please only use the device if you are either comfortable with operat
 
 
 
-## Delieverables
+## Deliverables
 
 - **Implement**: [pwm_signal_generator.vhd](src/pwm_signal_generator.vhd)
 

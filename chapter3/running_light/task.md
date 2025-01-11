@@ -20,9 +20,9 @@ entity running_light is
 		STEP_TIME  : time := 1 sec
 	);
 	port (
-		clk      : in std_logic;
-		res_n    : in std_logic;
-		leds     : out std_logic_vector
+		clk      : in std_ulogic;
+		res_n    : in std_ulogic;
+		leds     : out std_ulogic_vector
 	);
 end entity;
 ```
@@ -56,7 +56,7 @@ Once you have implemented and tested your `running_light` implementation, use th
 
 
 
-## Delieverables
+## Deliverables
 
 - **Implement**: [running_light.vhd](src/running_light.vhd)
 

@@ -119,7 +119,7 @@ end entity;
 ## Testbench
 
 Implement a testbench in [sram_ctrl_tb.vhd](tb/sram_ctrl_tb.vhd) that validates if your `sram_ctrl` FSM successfully writes to the SRAM and reads from it.
-For this purpose you are provided with a very simple model of the SRAM in `[sram.vhd](tb/sram.vhd)`.
+For this purpose you are provided with a very simple model of the SRAM in [sram.vhd](tb/sram.vhd).
 Note that your implementation working correctly with this model does not ensure that it also works correctly with the real hardware.
 However, do not load your design on the board before it works in simulations with the model!
 In addition to the model itself, the [sram_pkg.vhd](tb/sram_pkg.vhd) contains declares constants for the timing values from the SRAM datasheet.
@@ -146,10 +146,10 @@ Finally, provide a screenshot showing this, plus a few preceding and succeding S
 
 ## Deliverables
 
+- **Create**: signaltap.png
+
 - **Implement**: [sram_ctrl.vhd](src/sram_ctrl.vhd)
 
 - **Implement**: [sequence_fsm.vhd](src/sequence_fsm.vhd)
 
 - **Implement**: [sram_ctrl_tb.vhd](tb/sram_ctrl_tb.vhd)
-
-- **Create**: signaltap.png

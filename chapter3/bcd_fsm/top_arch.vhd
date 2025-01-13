@@ -1,6 +1,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
+use work.util_pkg.all;
+
 architecture top_arch of top is
 begin
 
@@ -16,5 +18,9 @@ begin
 			hex_digit1000 => hex3,
 			hex_sign      => hex4
 		);
+
+	hex5 <= SSD_CHAR_OFF;
+	hex6 <= SSD_CHAR_OFF;
+	hex7 <= SSD_CHAR_OFF;
 
 end architecture;

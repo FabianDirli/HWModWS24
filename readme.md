@@ -147,4 +147,5 @@ Your login credentials are the same as for the (local) TILab.
 | [pwm](chapter3/pwm/task.md) | 2 | oscilloscope, synthesis, registers |
 | [running_light](chapter3/running_light/task.md) | 1 | fsm modeling, fsm implementation |
 | [bcd_fsm](chapter3/bcd_fsm/task.md) | 2 | fsm modeling, fsm implementation |
+| [sram_ctrl](chapter3/sram_ctrl/task.md) | 3 | tri-state, datasheet, finite state machine modeling, finite state machine implementation |
 

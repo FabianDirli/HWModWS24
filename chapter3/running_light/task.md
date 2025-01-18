@@ -5,7 +5,7 @@
 
 [[_TOC_]]
 
-Your task is to implement a **state machine** in [running_light.vhd](src/running_light.vhd) that drives a series of LEDs in particular patterns.
+Your task is to implement a **state machine** in [running_light.vhd](src/running_light.vhd) that drives a series of eight LEDs in particular patterns.
 
 
 
@@ -31,7 +31,7 @@ end entity;
 where `clk` is the clock signal, `res_n` an asynchronous, low-active, reset signal and `leds` the output of the module.
 
 
-- Consider the different LED patterns below (drawn for `LEDS_WIDTH=8`) and choose one for your implementation.
+- Consider the different LED patterns below and choose one for your implementation.
 
 ![LED Patterns](.mdata/led_patterns.svg)
 

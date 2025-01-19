@@ -1,0 +1,52 @@
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
++-------------------------------------------------------------------------------+
+; Quartus Prime QXP Design File                                                 ;
++------------------+------------------------------------------------------------+
+; Field            ; Value                                                      ;
++------------------+------------------------------------------------------------+
+; Entity           ; dbg_core                                                   ;
+; Case Sensitive   ;                                                            ;
+; QXP Source       ; ../../../lib/top/src/dbg_core.qxp                          ;
+; Software Version ; Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition ;
+; Date             ; Wed Apr 24 08:36:46 2024                                   ;
+; Contents         ; Netlist Only                                               ;
+; Family           ; EP4CE115F29C7                                              ;
+; Device           ; CYCLONEIVE6F780C7                                          ;
++------------------+------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------------+
+; Boundary Ports                                                                                        ;
++---------------------------+--------+------------------------------------------------------------------+
+; Port Name                 ; Type   ; Default Value                                                    ;
++---------------------------+--------+------------------------------------------------------------------+
+; clk                       ; input  ; 0                                                                ;
+; tx                        ; output ; 0                                                                ;
+; rx                        ; input  ; 0                                                                ;
+; emulated_snes_clk         ; input  ; 0                                                                ;
+; emulated_snes_latch       ; input  ; 0                                                                ;
+; emulated_snes_data        ; output ; 0                                                                ;
+; emulated_gc_data          ; bidir  ; 0                                                                ;
+; emulated_rx               ; input  ; 0                                                                ;
+; emulated_tx               ; output ; 0                                                                ;
+; hex_segments_input [63:0] ; input  ; 0000000000000000000000000000000000000000000000000000000000000000 ;
+; ledr_input [17:0]         ; input  ; 000000000000000000                                               ;
+; ledg_input [8:0]          ; input  ; 000000000                                                        ;
+; switches_input [17:0]     ; input  ; 000000000000000000                                               ;
+; switches_output [17:0]    ; output ; 000000000000000000                                               ;
+; keys_input [3:0]          ; input  ; 0000                                                             ;
+; keys_output [3:0]         ; output ; 0000                                                             ;
++---------------------------+--------+------------------------------------------------------------------+

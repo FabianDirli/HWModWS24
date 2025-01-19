@@ -1,0 +1,21 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+use work.util_pkg.all;
+
+architecture top_arch_simplecalc of top is
+    constant DATA_WIDTH : natural := 8;
+begin
+
+    uut : entity work.simplecalc
+    generic map (
+        DATA_WIDTH => DATA_WIDTH
+    );
+    port map (
+    
+    );
+
+
+
+end architecture;

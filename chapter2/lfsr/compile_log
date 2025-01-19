@@ -1,0 +1,70 @@
+** Warning: (vlib-34) Library already exists at "work".
+Errors: 0, Warnings: 1
+QuestaSim vcom 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 16:19:23 on Dec 09,2024
+vcom -O0 -check_synthesis -2008 -work work -suppress 1236 ../../lib/math/src/math_pkg.vhd 
+-- Loading package STANDARD
+-- Compiling package math_pkg
+-- Compiling package body math_pkg
+-- Loading package math_pkg
+End time: 16:19:23 on Dec 09,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim vcom 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 16:19:23 on Dec 09,2024
+vcom -O0 -check_synthesis -2008 -work work -suppress 1236 ../../lib/util/src/util_pkg.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package util_pkg
+-- Compiling package body util_pkg
+-- Loading package util_pkg
+End time: 16:19:23 on Dec 09,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim vcom 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 16:19:23 on Dec 09,2024
+vcom -O0 -check_synthesis -2008 -work work -suppress 1236 src/lfsr.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity lfsr
+-- Compiling architecture arch of lfsr
+End time: 16:19:23 on Dec 09,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim vcom 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 16:19:23 on Dec 09,2024
+vcom -O0 -check_synthesis -2008 -work work -suppress 1236 tb/lfsr_tb.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity lfsr_tb
+-- Compiling architecture tb of lfsr_tb
+** Warning: tb/lfsr_tb.vhd(85): (vcom-1400) Synthesis Warning: Signal "load_seed_n" is read in the process but is not in the sensitivity list.
+** Warning: tb/lfsr_tb.vhd(86): (vcom-1400) Synthesis Warning: Signal "shiftRegister" is read in the process but is not in the sensitivity list.
+** Warning: tb/lfsr_tb.vhd(86): (vcom-1400) Synthesis Warning: Signal "prdata" is read in the process but is not in the sensitivity list.
+-- Loading entity lfsr
+End time: 16:19:23 on Dec 09,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 3
+QuestaSim vcom 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 16:19:23 on Dec 09,2024
+vcom -O0 -check_synthesis -2008 -work work -suppress 1236 ../../lib/top/src/top.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity top
+End time: 16:19:23 on Dec 09,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim vcom 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 16:19:23 on Dec 09,2024
+vcom -O0 -check_synthesis -2008 -work work -suppress 1236 top_arch.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package math_pkg
+-- Compiling architecture top_arch of top
+-- Loading entity top
+-- Loading package NUMERIC_STD
+-- Loading entity lfsr
+End time: 16:19:23 on Dec 09,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

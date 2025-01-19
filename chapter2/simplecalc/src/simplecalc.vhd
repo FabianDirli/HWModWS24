@@ -24,5 +24,47 @@ entity simplecalc is
 end entity;
 
 architecture arch of simplecalc is
+	signal lastOperand1 : std_ulogic;
+	signal lastOperand2 : std_ulogic;
 begin
+
+	loadOperand1_p : process (clk, res_n)
+	begin
+		if res_n = '0' then
+			operand1 <= (others => '0');
+			lastOperand1 <= '1';
+		elsif rising_edge(clk) then
+			if lastOperand1 = '1' and store_operand1 = '0' then
+				operand1 <= operand_data_in;
+			end if;
+			lastOperand1 <= store_operand1;
+		end if;
+
+	end process;
+
+	loadOperand2_p : process (clk, res_n)
+	begin
+		if res_n = '0' then
+			operand2 <= (others => '0');
+			lastOperand2 <= '1';
+		elsif rising_edge(clk) then
+			if lastOperand2 = '1' and store_operand2 = '0' then
+				operand2 <= operand_data_in;
+			end if;
+			lastOperand2 <= store_operand2;
+		end if;
+
+	end process;
+
+	calc_p : process (all)
+	begin	
+		if sub = '0' then
+			result <= std_ulogic_vector(unsigned(operand1) + unsigned(operand2));
+		else
+			result <= std_ulogic_vector(unsigned(operand1) - unsigned(operand2));
+		end if;
+		
+	end process;
+
+
 end architecture;

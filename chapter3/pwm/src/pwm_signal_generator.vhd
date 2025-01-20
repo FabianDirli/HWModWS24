@@ -17,6 +17,44 @@ end entity;
 
 
 architecture arch of pwm_signal_generator is
+	signal counter : unsigned(COUNTER_WIDTH-1 downto 0);
+	signal gen : boolean := false;
 begin
 	-- TODO: Implement the PWM generator
+
+	reg : process (clk, res_n) 
+  	begin
+		if res_n = '0' then
+			counter <= (others => '0');
+		elsif rising_edge(clk) then
+			if gen then
+				counter <= counter + 1;
+			end if;
+
+			if en = '1' and counter = 0 then
+				gen <= true;
+			end if;
+
+			if counter = 0 and pwm_out = '1' then
+				gen <= false;
+			end if;
+
+		end if;
+  	end process;
+
+	pwm_gen : process (counter) 
+	begin
+		if en = '0' and not gen then
+			pwm_out <= '0';
+		elsif counter < unsigned(value) then
+			pwm_out <= '0';
+		else 
+			pwm_out <= '1';
+		end if;
+
+		
+
+
+	end process;
+
 end architecture;

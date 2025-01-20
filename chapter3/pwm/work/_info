@@ -1,0 +1,223 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/edauser/Documents/hwmod_ws2024/chapter3/pwm
+Pmath_pkg
+!i122 120
+Z1 w1737328226
+R0
+Z2 8../../lib/math/src/math_pkg.vhd
+Z3 F../../lib/math/src/math_pkg.vhd
+l0
+L2 1
+Vmlgz8Ha97hKngdmW4Il4P1
+!s100 SMUkQ^86hQci3V_S9j@^K1
+Z4 OV;C;2020.1;71
+33
+b1
+Z5 !s110 1737394157
+!i10b 1
+Z6 !s108 1737394157.000000
+Z7 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|../../lib/math/src/math_pkg.vhd|
+Z8 !s107 ../../lib/math/src/math_pkg.vhd|
+!i113 1
+Z9 o-suppress 1236 -O0 -check_synthesis -2008 -work work
+Z10 tExplicit 1 CvgOpt 0
+Bbody
+DPx4 work 8 math_pkg 0 22 mlgz8Ha97hKngdmW4Il4P1
+!i122 120
+l0
+L11 1
+V6i<cYN=lXmI[Ic@:h8F`z0
+!s100 CYQLI4Ci@5U5[oa]<Y2_M1
+R4
+33
+R5
+!i10b 1
+R6
+R7
+R8
+!i113 1
+R9
+R10
+Epwm_signal_generator
+Z11 w1737393260
+Z12 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z13 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z14 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 122
+R0
+Z15 8src/pwm_signal_generator.vhd
+Z16 Fsrc/pwm_signal_generator.vhd
+l0
+L5 1
+VSV@F8KDkg2lokkeeIHZnM2
+!s100 ZjzOC2k3`8aJDTj3XDZ=B3
+R4
+33
+R5
+!i10b 1
+R6
+Z17 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|src/pwm_signal_generator.vhd|
+Z18 !s107 src/pwm_signal_generator.vhd|
+!i113 1
+R9
+R10
+Aarch
+R12
+R13
+R14
+Z19 DEx4 work 20 pwm_signal_generator 0 22 SV@F8KDkg2lokkeeIHZnM2
+!i122 122
+l22
+L19 42
+VodPQM]?BEid_e<me4>dP63
+!s100 3N21N=8z4_d?`Nfe@P3D`3
+R4
+33
+R5
+!i10b 1
+R6
+R17
+R18
+!i113 1
+R9
+R10
+Epwm_signal_generator_tb
+Z20 w1737394153
+R12
+R13
+R14
+!i122 123
+R0
+Z21 8tb/pwm_signal_generator_tb.vhd
+Z22 Ftb/pwm_signal_generator_tb.vhd
+l0
+L5 1
+V>Sk0OUCkl4fmGAiLDDB]c0
+!s100 Nf18H5e@]fgz6ajKJJK`K1
+R4
+33
+R5
+!i10b 1
+R6
+Z23 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|tb/pwm_signal_generator_tb.vhd|
+Z24 !s107 tb/pwm_signal_generator_tb.vhd|
+!i113 1
+R9
+R10
+Atb
+R19
+R12
+R13
+R14
+DEx4 work 23 pwm_signal_generator_tb 0 22 >Sk0OUCkl4fmGAiLDDB]c0
+!i122 123
+l14
+L8 64
+VB>V7^S:Y>Fb;oDR]Ag[];0
+!s100 Oo_X5Y@0>UoW@4?G`MEa^2
+R4
+33
+R5
+!i10b 1
+R6
+R23
+R24
+!i113 1
+R9
+R10
+Etop
+R1
+R13
+R14
+!i122 124
+R0
+8../../lib/top/src/top.vhd
+F../../lib/top/src/top.vhd
+l0
+L4 1
+VB>_j^g<Q^W::amo:c[>NR0
+!s100 E6P8W3:9zUXd<ABUHgB7K2
+R4
+33
+R5
+!i10b 1
+R6
+!s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|../../lib/top/src/top.vhd|
+!s107 ../../lib/top/src/top.vhd|
+!i113 1
+R9
+R10
+Atop_arch
+R12
+R19
+Z25 DEx4 work 3 top 0 22 B>_j^g<Q^W::amo:c[>NR0
+R13
+R14
+!i122 125
+Z26 8top_arch.vhd
+Z27 Ftop_arch.vhd
+l6
+Z28 L4 22
+Z29 V9BJ3i02zi:zT]^44F3X=W2
+Z30 !s100 f`[cIKRQAheDm_j@?:bO?2
+R4
+33
+R5
+!i10b 1
+R6
+Z31 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|top_arch.vhd|
+Z32 !s107 top_arch.vhd|
+!i113 1
+R9
+R10
+Putil_pkg
+R13
+R14
+!i122 121
+R1
+R0
+Z33 8../../lib/util/src/util_pkg.vhd
+Z34 F../../lib/util/src/util_pkg.vhd
+l0
+L5 1
+VU[4:OTM3e?RQoW]Q:0XSP3
+!s100 E@G;dBJfSVQ61PSm<7La01
+R4
+33
+b1
+R5
+!i10b 1
+R6
+Z35 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|../../lib/util/src/util_pkg.vhd|
+Z36 !s107 ../../lib/util/src/util_pkg.vhd|
+!i113 1
+R9
+R10
+Bbody
+DPx4 work 8 util_pkg 0 22 U[4:OTM3e?RQoW]Q:0XSP3
+R13
+R14
+!i122 121
+l0
+L29 1
+Vo^@>zUfZ:IZBg>_0^7N<f3
+!s100 z:o:NmfOKaeWAN80S;aA^3
+R4
+33
+R5
+!i10b 1
+R6
+R35
+R36
+!i113 1
+R9
+R10

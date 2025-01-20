@@ -1,0 +1,12 @@
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
+Extra Info (176273): Performing register packing on registers with non-logic cell location assignments
+Extra Info (176274): Completed register packing on registers with non-logic cell location assignments
+Extra Info (176236): Started Fast Input/Output/OE register processing
+Extra Info (176237): Finished Fast Input/Output/OE register processing
+Extra Info (176238): Start inferring scan chains for DSP blocks
+Extra Info (176239): Inferring scan chains for DSP blocks is complete
+Extra Info (176248): Moving registers into I/O cells, Multiplier Blocks, and RAM blocks to improve timing and density
+Extra Info (176249): Finished moving registers into I/O cells, Multiplier Blocks, and RAM blocks
+Warning (169177): 55 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
+Warning (169064): Following 27 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results

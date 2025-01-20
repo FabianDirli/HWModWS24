@@ -1,0 +1,14 @@
+# vsim running_light_tb -nowlflock -msgmode both 
+# vsim running_light_tb -nowlflock -msgmode both 
+# Start time: 16:22:40 on Jan 20,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.math_pkg(body)
+# Loading work.running_light_tb(arch)
+# Loading work.running_light(arch)
+#  run -all
+# quit
+# End time: 16:22:40 on Jan 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

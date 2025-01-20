@@ -34,11 +34,10 @@ begin
 			if en = '1' and counter = 0 then
 				gen <= true;
 			end if;
-
-			if counter = 0 and pwm_out = '1' then
+	
+			if counter = 2**COUNTER_WIDTH-1 then
 				gen <= false;
 			end if;
-
 		end if;
   	end process;
 

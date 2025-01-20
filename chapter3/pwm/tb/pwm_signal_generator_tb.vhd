@@ -43,14 +43,14 @@ begin
 		begin
 			-- TODO: Implement this procedure
 			en <= '1';
+			wait until rising_edge(clk);
 			previous := now;
 			wait until rising_edge(pwm_out);
-			--assert low_time = now - previous report "Low time WRONG! Should be " & low_time & " and got " & (now - previous);
-			report time'image(now);
+			assert low_time = now - previous report "Low time WRONG! Should be " & time'image(low_time) & " and got " & time'image(now - previous);
 			en <= '0';
 			previous := now;
 			wait until falling_edge(pwm_out);
-			assert high_time = now - previous report "High time WRONG!";
+			assert high_time = now - previous report "High time WRONG Should be " & time'image(high_time) & " and got " & time'image(now - previous);
 		end procedure;
 
 		
@@ -60,9 +60,10 @@ begin
 			res_n <= '0';
 			wait for 1 us;
 			res_n <= '1';
+			
 			value <= std_logic_vector(to_unsigned(i, COUNTER_WIDTH));
-			check_pwm_signal(1 us * (i - 1), 1 us * (2**COUNTER_WIDTH - i));
-
+			check_pwm_signal(1 us * (i), 1 us * (2**COUNTER_WIDTH - i));
+			wait for 2 us;
 		end loop;
 		clk_stop <= true;
 		wait;

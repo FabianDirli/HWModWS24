@@ -1,0 +1,1042 @@
+Analysis & Synthesis report for dbg_top
+Mon Jan 20 09:48:32 2025
+Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |dbg_top|top:top_inst|running_light:led_controller|s.state
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Source assignments for dbg_core:dbg_core_inst
+ 14. Parameter Settings for User Entity Instance: top:top_inst|running_light:led_controller
+ 15. Parameter Settings for User Entity Instance: dbg_core:dbg_core_inst
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jan 20 09:48:32 2025          ;
+; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Revision Name                      ; dbg_top                                        ;
+; Top-level Entity Name              ; dbg_top                                        ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 2,589                                          ;
+;     Total combinational functions  ; 2,322                                          ;
+;     Dedicated logic registers      ; 1,238                                          ;
+; Total registers                    ; 1238                                           ;
+; Total pins                         ; 221                                            ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 8,448                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; dbg_top            ; dbg_top            ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; VHDL Show LMF Mapping Messages                                   ; Off                ;                    ;
+; VHDL Version                                                     ; VHDL_2008          ; VHDL_1993          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                      ;
++-----------------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                    ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                      ; Library ;
++-----------------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------+---------+
+; ../../../lib/math/src/math_pkg.vhd                  ; yes             ; User VHDL File                                        ; /home/edauser/Documents/hwmod_ws2024/lib/math/src/math_pkg.vhd                    ;         ;
+; ../../../lib/top/src/dbg_top.vhd                    ; yes             ; User VHDL File                                        ; /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd                      ;         ;
+; ../../../lib/top/src/top.vhd                        ; yes             ; User VHDL File                                        ; /home/edauser/Documents/hwmod_ws2024/lib/top/src/top.vhd                          ;         ;
+; ../top_arch.vhd                                     ; yes             ; User VHDL File                                        ; /home/edauser/Documents/hwmod_ws2024/chapter3/running_light/top_arch.vhd          ;         ;
+; ../src/running_light.vhd                            ; yes             ; User VHDL File                                        ; /home/edauser/Documents/hwmod_ws2024/chapter3/running_light/src/running_light.vhd ;         ;
+; ../../../lib/top/src/dbg_core.qxp                   ; yes             ; User File                                             ; /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp                     ;         ;
+; db/dbg_core.ram0_dcl_dp_ram_1c1r1w_ab2237c6.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; db/dbg_core.ram0_dcl_dp_ram_1c1r1w_ab2237c6.hdl.mif                               ;         ;
+; db/dbg_core.ram0_dcl_dp_ram_1c1r1w_d79d653d.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; db/dbg_core.ram0_dcl_dp_ram_1c1r1w_d79d653d.hdl.mif                               ;         ;
++-----------------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 2,589     ;
+;                                             ;           ;
+; Total combinational functions               ; 2322      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 1438      ;
+;     -- 3 input functions                    ; 356       ;
+;     -- <=2 input functions                  ; 528       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 2051      ;
+;     -- arithmetic mode                      ; 271       ;
+;                                             ;           ;
+; Total registers                             ; 1238      ;
+;     -- Dedicated logic registers            ; 1238      ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 221       ;
+; Total memory bits                           ; 8448      ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 1262      ;
+; Total fan-out                               ; 12742     ;
+; Average fan-out                             ; 3.14      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                       ;
++----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node                         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                   ; Entity Name        ; Library Name ;
++----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
+; |dbg_top                                           ; 2322 (1)            ; 1238 (0)                  ; 8448        ; 0            ; 0       ; 0         ; 221  ; 0            ; |dbg_top                                                                                                                                                              ; dbg_top            ; work         ;
+;    |dbg_core:dbg_core_inst|                        ; 2181 (85)           ; 1166 (0)                  ; 8448        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst                                                                                                                                       ; dbg_core           ; work         ;
+;       |dbg_interface:dbg_if_inst|                  ; 1099 (177)          ; 303 (99)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dbg_interface:dbg_if_inst                                                                                                             ; dbg_interface      ; work         ;
+;          |dcl_hex_reader:dcl_hex_reader_inst|      ; 155 (155)           ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dbg_interface:dbg_if_inst|dcl_hex_reader:dcl_hex_reader_inst                                                                          ; dcl_hex_reader     ; work         ;
+;          |dcl_hex_writer:dcl_hex_writer_inst|      ; 73 (73)             ; 92 (92)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dbg_interface:dbg_if_inst|dcl_hex_writer:dcl_hex_writer_inst                                                                          ; dcl_hex_writer     ; work         ;
+;          |dcl_str_writer:str_writer_inst|          ; 77 (77)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dbg_interface:dbg_if_inst|dcl_str_writer:str_writer_inst                                                                              ; dcl_str_writer     ; work         ;
+;          |enumeration:enumeration_inst|            ; 617 (617)           ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dbg_interface:dbg_if_inst|enumeration:enumeration_inst                                                                                ; enumeration        ; work         ;
+;       |dcl_uart:serial_port_inst|                  ; 157 (1)             ; 169 (2)                   ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dcl_uart:serial_port_inst                                                                                                             ; dcl_uart           ; work         ;
+;          |dcl_fifo:receiver_fifo|                  ; 41 (19)             ; 52 (10)                   ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:receiver_fifo                                                                                      ; dcl_fifo           ; work         ;
+;             |dcl_dp_ram_1c1r1w:memory_inst|        ; 22 (22)             ; 42 (42)                   ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:receiver_fifo|dcl_dp_ram_1c1r1w:memory_inst                                                        ; dcl_dp_ram_1c1r1w  ; work         ;
+;                |altsyncram:ram_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:receiver_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0                                   ; altsyncram         ; work         ;
+;                   |altsyncram_kpn1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:receiver_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_kpn1:auto_generated    ; altsyncram_kpn1    ; work         ;
+;          |dcl_fifo:transmitter_fifo|               ; 40 (19)             ; 50 (10)                   ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo                                                                                   ; dcl_fifo           ; work         ;
+;             |dcl_dp_ram_1c1r1w:memory_inst|        ; 21 (21)             ; 40 (40)                   ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo|dcl_dp_ram_1c1r1w:memory_inst                                                     ; dcl_dp_ram_1c1r1w  ; work         ;
+;                |altsyncram:ram_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0                                ; altsyncram         ; work         ;
+;                   |altsyncram_kpn1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_kpn1:auto_generated ; altsyncram_kpn1    ; work         ;
+;          |dcl_uart_rx_fsm:receiver_inst|           ; 38 (38)             ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_uart_rx_fsm:receiver_inst                                                                               ; dcl_uart_rx_fsm    ; work         ;
+;          |dcl_uart_tx_fsm:transmitter_inst|        ; 37 (37)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_uart_tx_fsm:transmitter_inst                                                                            ; dcl_uart_tx_fsm    ; work         ;
+;       |gc_ctrl_emulator:gc_ctrl_emulator_inst|     ; 198 (72)            ; 241 (124)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|gc_ctrl_emulator:gc_ctrl_emulator_inst                                                                                                ; gc_ctrl_emulator   ; work         ;
+;          |pulsewidth_encoder:pwe_inst|             ; 126 (126)           ; 117 (115)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|gc_ctrl_emulator:gc_ctrl_emulator_inst|pulsewidth_encoder:pwe_inst                                                                    ; pulsewidth_encoder ; work         ;
+;             |dcl_sync:data_sync_inst|              ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|gc_ctrl_emulator:gc_ctrl_emulator_inst|pulsewidth_encoder:pwe_inst|dcl_sync:data_sync_inst                                            ; dcl_sync           ; work         ;
+;       |input_interceptor:keys_inst|                ; 18 (18)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|input_interceptor:keys_inst                                                                                                           ; input_interceptor  ; work         ;
+;       |input_interceptor:switches_inst|            ; 44 (44)             ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|input_interceptor:switches_inst                                                                                                       ; input_interceptor  ; work         ;
+;       |output_reader:hex_segments_inst|            ; 64 (64)             ; 65 (65)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|output_reader:hex_segments_inst                                                                                                       ; output_reader      ; work         ;
+;       |output_reader:ledg_inst|                    ; 9 (9)               ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|output_reader:ledg_inst                                                                                                               ; output_reader      ; work         ;
+;       |output_reader:ledr_inst|                    ; 18 (18)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|output_reader:ledr_inst                                                                                                               ; output_reader      ; work         ;
+;       |snes_ctrl_emulator:snes_ctrl_emulator_inst| ; 90 (90)             ; 71 (71)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|snes_ctrl_emulator:snes_ctrl_emulator_inst                                                                                            ; snes_ctrl_emulator ; work         ;
+;       |uart_emulator:uart_emulator_inst|           ; 399 (69)            ; 240 (43)                  ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst                                                                                                      ; uart_emulator      ; work         ;
+;          |dcl_fifo:rx_fifo|                        ; 95 (68)             ; 86 (32)                   ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:rx_fifo                                                                                     ; dcl_fifo           ; work         ;
+;             |dcl_dp_ram_1c1r1w:memory_inst|        ; 27 (27)             ; 54 (54)                   ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:rx_fifo|dcl_dp_ram_1c1r1w:memory_inst                                                       ; dcl_dp_ram_1c1r1w  ; work         ;
+;                |altsyncram:ram_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:rx_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0                                  ; altsyncram         ; work         ;
+;                   |altsyncram_u2o1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:rx_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_u2o1:auto_generated   ; altsyncram_u2o1    ; work         ;
+;          |dcl_fifo:tx_fifo|                        ; 68 (68)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo                                                                                     ; dcl_fifo           ; work         ;
+;          |dcl_uart_rx_fsm:rx_inst|                 ; 119 (119)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_uart_rx_fsm:rx_inst                                                                              ; dcl_uart_rx_fsm    ; work         ;
+;          |dcl_uart_tx_fsm:tx_inst|                 ; 48 (48)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_uart_tx_fsm:tx_inst                                                                              ; dcl_uart_tx_fsm    ; work         ;
+;    |top:top_inst|                                  ; 140 (0)             ; 72 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|top:top_inst                                                                                                                                                 ; top                ; work         ;
+;       |running_light:led_controller|               ; 140 (140)           ; 72 (72)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dbg_top|top:top_inst|running_light:led_controller                                                                                                                    ; running_light      ; work         ;
++----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                                                           ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+-----------------------------------------------------+
+; Name                                                                                                                                                                    ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                                 ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+-----------------------------------------------------+
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:receiver_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_kpn1:auto_generated|ALTSYNCRAM    ; AUTO ; Simple Dual Port ; 16           ; 8            ; 16           ; 8            ; 128  ; db/dbg_core.ram0_dcl_dp_ram_1c1r1w_ab2237c6.hdl.mif ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_kpn1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 16           ; 8            ; 16           ; 8            ; 128  ; db/dbg_core.ram0_dcl_dp_ram_1c1r1w_ab2237c6.hdl.mif ;
+; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:rx_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_u2o1:auto_generated|ALTSYNCRAM   ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; db/dbg_core.ram0_dcl_dp_ram_1c1r1w_d79d653d.hdl.mif ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+-----------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------+
+; State Machine - |dbg_top|top:top_inst|running_light:led_controller|s.state                                         ;
++------------+------------+------------+------------+------------+------------+------------+------------+------------+
+; Name       ; s.state.S7 ; s.state.S6 ; s.state.S5 ; s.state.S4 ; s.state.S3 ; s.state.S2 ; s.state.S1 ; s.state.S0 ;
++------------+------------+------------+------------+------------+------------+------------+------------+------------+
+; s.state.S0 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ;
+; s.state.S1 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 1          ;
+; s.state.S2 ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 1          ;
+; s.state.S3 ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 1          ;
+; s.state.S4 ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 1          ;
+; s.state.S5 ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 1          ;
+; s.state.S6 ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ;
+; s.state.S7 ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ;
++------------+------------+------------+------------+------------+------------+------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                  ;
++------------------------------------------------------------+----------------------------------------+
+; Register name                                              ; Reason for Removal                     ;
++------------------------------------------------------------+----------------------------------------+
+; top:top_inst|running_light:led_controller|s.clk_time[0..7] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 8                      ;                                        ;
++------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1238  ;
+; Number of registers using Synchronous Clear  ; 117   ;
+; Number of registers using Synchronous Load   ; 91    ;
+; Number of registers using Asynchronous Clear ; 927   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 614   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                            ;
++-------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                             ; Fan out ;
++-------------------------------------------------------------------------------------------------------------------------------+---------+
+; top:top_inst|running_light:led_controller|s.led[0]                                                                            ; 2       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo|empty_int                                          ; 5       ;
+; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|empty_int                                            ; 15      ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[10] ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:receiver_fifo|empty_int                                             ; 9       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[12] ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[14] ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:receiver_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[18]    ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:receiver_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[22]    ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:receiver_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[20]    ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:receiver_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[24]    ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:receiver_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[14]    ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:receiver_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[16]    ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:receiver_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[10]    ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:receiver_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[12]    ; 1       ;
+; dbg_core:dbg_core_inst|snes_ctrl_emulator:snes_ctrl_emulator_inst|shift_reg[0]                                                ; 1       ;
+; dbg_core:dbg_core_inst|dbg_interface:dbg_if_inst|hex_reader_max_length[1]                                                     ; 2       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[16] ; 1       ;
+; dbg_core:dbg_core_inst|snes_ctrl_emulator:snes_ctrl_emulator_inst|shift_reg[1]                                                ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[18] ; 1       ;
+; dbg_core:dbg_core_inst|snes_ctrl_emulator:snes_ctrl_emulator_inst|snes_latch_old                                              ; 1       ;
+; dbg_core:dbg_core_inst|snes_ctrl_emulator:snes_ctrl_emulator_inst|snes_clk_old                                                ; 1       ;
+; dbg_core:dbg_core_inst|snes_ctrl_emulator:snes_ctrl_emulator_inst|shift_reg[2]                                                ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[20] ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|rx_sync_vector[2]                                                            ; 5       ;
+; dbg_core:dbg_core_inst|snes_ctrl_emulator:snes_ctrl_emulator_inst|shift_reg[3]                                                ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[22] ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|rx_sync_vector[1]                                                            ; 1       ;
+; dbg_core:dbg_core_inst|dcl_uart:serial_port_inst|dcl_fifo:transmitter_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[24] ; 1       ;
+; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:rx_fifo|empty_int                                            ; 13      ;
+; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:rx_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[36]   ; 1       ;
+; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:rx_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[32]   ; 1       ;
+; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:rx_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[34]   ; 1       ;
+; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:rx_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[30]   ; 1       ;
+; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:rx_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[28]   ; 1       ;
+; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:rx_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[24]   ; 1       ;
+; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:rx_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[26]   ; 1       ;
+; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:rx_fifo|dcl_dp_ram_1c1r1w:memory_inst|ram_rtl_0_bypass[22]   ; 1       ;
+; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|\rx_synchronizer:rx_sync_vector[2]                                    ; 6       ;
+; dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|\rx_synchronizer:rx_sync_vector[1]                                    ; 1       ;
+; Total number of inverted registers = 40                                                                                       ;         ;
++-------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Source assignments for dbg_core:dbg_core_inst                                                                   ;
++--------------------------------------------------------------------------------+--------------------+------+----+
+; Assignment                                                                     ; Value              ; From ; To ;
++--------------------------------------------------------------------------------+--------------------+------+----+
+; ENABLE_UNUSED_RX_CLOCK_WORKAROUND                                              ; OFF                ;      ;    ;
+; PRESERVE_UNUSED_XCVR_CHANNEL                                                   ; OFF                ;      ;    ;
+; ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP                                            ; OFF                ;      ;    ;
+; SYNCHRONIZATION_REGISTER_CHAIN_LENGTH                                          ; 2                  ;      ;    ;
+; OPTIMIZE_POWER_DURING_SYNTHESIS                                                ; NORMAL COMPILATION ;      ;    ;
+; TXPMA_SLEW_RATE                                                                ; LOW                ;      ;    ;
+; ADCE_ENABLED                                                                   ; AUTO               ;      ;    ;
+; BLOCK_RAM_TO_MLAB_CELL_CONVERSION                                              ; ON                 ;      ;    ;
+; BLOCK_RAM_AND_MLAB_EQUIVALENT_POWER_UP_CONDITIONS                              ; AUTO               ;      ;    ;
+; BLOCK_RAM_AND_MLAB_EQUIVALENT_PAUSED_READ_CAPABILITIES                         ; CARE               ;      ;    ;
+; OPTIMIZE_POWER_DURING_FITTING                                                  ; NORMAL COMPILATION ;      ;    ;
+; PHYSICAL_SYNTHESIS_COMBO_LOGIC_FOR_AREA                                        ; OFF                ;      ;    ;
+; PHYSICAL_SYNTHESIS_COMBO_LOGIC                                                 ; OFF                ;      ;    ;
+; PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION                                        ; OFF                ;      ;    ;
+; PHYSICAL_SYNTHESIS_MAP_LOGIC_TO_MEMORY_FOR_AREA                                ; OFF                ;      ;    ;
+; PHYSICAL_SYNTHESIS_REGISTER_RETIMING                                           ; OFF                ;      ;    ;
+; PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING                              ; OFF                ;      ;    ;
+; ENABLE_BENEFICIAL_SKEW_OPTIMIZATION                                            ; ON                 ;      ;    ;
+; FORM_DDR_CLUSTERING_CLIQUE                                                     ; OFF                ;      ;    ;
+; HYPER_RETIMER_FAST_FORWARD_ADD_PIPELINING_MAX                                  ; -1                 ;      ;    ;
+; HYPER_RETIMER_FAST_FORWARD_ASYNCH_CLEAR                                        ; AUTO               ;      ;    ;
+; HYPER_RETIMER_FAST_FORWARD_USER_PRESERVE_RESTRICTION                           ; AUTO               ;      ;    ;
+; HYPER_RETIMER_FAST_FORWARD_DSP_BLOCKS                                          ; ON                 ;      ;    ;
+; HYPER_RETIMER_FAST_FORWARD_RAM_BLOCKS                                          ; ON                 ;      ;    ;
+; POWER_REPORT_SIGNAL_ACTIVITY                                                   ; OFF                ;      ;    ;
+; POWER_REPORT_POWER_DISSIPATION                                                 ; OFF                ;      ;    ;
+; ARRIAIIGX_RX_CDR_LOCKUP_FIX_OVERRIDE                                           ; OFF                ;      ;    ;
+; MUX_RESTRUCTURE                                                                ; AUTO               ;      ;    ;
+; MLAB_ADD_TIMING_CONSTRAINTS_FOR_MIXED_PORT_FEED_THROUGH_MODE_SETTING_DONT_CARE ; OFF                ;      ;    ;
+; STATE_MACHINE_PROCESSING                                                       ; AUTO               ;      ;    ;
+; SAFE_STATE_MACHINE                                                             ; OFF                ;      ;    ;
+; IGNORE_VERILOG_INITIAL_CONSTRUCTS                                              ; OFF                ;      ;    ;
+; VERILOG_CONSTANT_LOOP_LIMIT                                                    ; 5000               ;      ;    ;
+; VERILOG_NON_CONSTANT_LOOP_LIMIT                                                ; 250                ;      ;    ;
+; INFER_RAMS_FROM_RAW_LOGIC                                                      ; ON                 ;      ;    ;
+; DSP_BLOCK_BALANCING                                                            ; AUTO               ;      ;    ;
+; NOT_GATE_PUSH_BACK                                                             ; ON                 ;      ;    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS                                                   ; OFF                ;      ;    ;
+; REMOVE_DUPLICATE_REGISTERS                                                     ; ON                 ;      ;    ;
+; IGNORE_CARRY_BUFFERS                                                           ; OFF                ;      ;    ;
+; IGNORE_CASCADE_BUFFERS                                                         ; OFF                ;      ;    ;
+; IGNORE_GLOBAL_BUFFERS                                                          ; OFF                ;      ;    ;
+; IGNORE_ROW_GLOBAL_BUFFERS                                                      ; OFF                ;      ;    ;
+; IGNORE_LCELL_BUFFERS                                                           ; OFF                ;      ;    ;
+; MAX7000_IGNORE_LCELL_BUFFERS                                                   ; AUTO               ;      ;    ;
+; IGNORE_SOFT_BUFFERS                                                            ; ON                 ;      ;    ;
+; MAX7000_IGNORE_SOFT_BUFFERS                                                    ; OFF                ;      ;    ;
+; AUTO_GLOBAL_CLOCK_MAX                                                          ; ON                 ;      ;    ;
+; AUTO_GLOBAL_OE_MAX                                                             ; ON                 ;      ;    ;
+; MAX_AUTO_GLOBAL_REGISTER_CONTROLS                                              ; ON                 ;      ;    ;
+; AUTO_IMPLEMENT_IN_ROM                                                          ; OFF                ;      ;    ;
+; APEX20K_TECHNOLOGY_MAPPER                                                      ; LUT                ;      ;    ;
+; OPTIMIZATION_TECHNIQUE                                                         ; BALANCED           ;      ;    ;
+; STRATIXII_OPTIMIZATION_TECHNIQUE                                               ; BALANCED           ;      ;    ;
+; CYCLONE_OPTIMIZATION_TECHNIQUE                                                 ; BALANCED           ;      ;    ;
+; CYCLONEII_OPTIMIZATION_TECHNIQUE                                               ; BALANCED           ;      ;    ;
+; STRATIX_OPTIMIZATION_TECHNIQUE                                                 ; BALANCED           ;      ;    ;
+; MAXII_OPTIMIZATION_TECHNIQUE                                                   ; BALANCED           ;      ;    ;
+; MAX7000_OPTIMIZATION_TECHNIQUE                                                 ; SPEED              ;      ;    ;
+; APEX20K_OPTIMIZATION_TECHNIQUE                                                 ; BALANCED           ;      ;    ;
+; MERCURY_OPTIMIZATION_TECHNIQUE                                                 ; AREA               ;      ;    ;
+; FLEX6K_OPTIMIZATION_TECHNIQUE                                                  ; AREA               ;      ;    ;
+; FLEX10K_OPTIMIZATION_TECHNIQUE                                                 ; AREA               ;      ;    ;
+; ALLOW_XOR_GATE_USAGE                                                           ; ON                 ;      ;    ;
+; AUTO_LCELL_INSERTION                                                           ; ON                 ;      ;    ;
+; CARRY_CHAIN_LENGTH                                                             ; 48                 ;      ;    ;
+; FLEX6K_CARRY_CHAIN_LENGTH                                                      ; 32                 ;      ;    ;
+; FLEX10K_CARRY_CHAIN_LENGTH                                                     ; 32                 ;      ;    ;
+; MERCURY_CARRY_CHAIN_LENGTH                                                     ; 48                 ;      ;    ;
+; STRATIX_CARRY_CHAIN_LENGTH                                                     ; 70                 ;      ;    ;
+; STRATIXII_CARRY_CHAIN_LENGTH                                                   ; 70                 ;      ;    ;
+; CASCADE_CHAIN_LENGTH                                                           ; 2                  ;      ;    ;
+; PARALLEL_EXPANDER_CHAIN_LENGTH                                                 ; 16                 ;      ;    ;
+; MAX7000_PARALLEL_EXPANDER_CHAIN_LENGTH                                         ; 4                  ;      ;    ;
+; AUTO_CARRY_CHAINS                                                              ; ON                 ;      ;    ;
+; AUTO_CASCADE_CHAINS                                                            ; ON                 ;      ;    ;
+; AUTO_PARALLEL_EXPANDERS                                                        ; ON                 ;      ;    ;
+; AUTO_OPEN_DRAIN_PINS                                                           ; ON                 ;      ;    ;
+; AUTO_ROM_RECOGNITION                                                           ; ON                 ;      ;    ;
+; AUTO_RAM_RECOGNITION                                                           ; ON                 ;      ;    ;
+; AUTO_DSP_RECOGNITION                                                           ; ON                 ;      ;    ;
+; AUTO_SHIFT_REGISTER_RECOGNITION                                                ; AUTO               ;      ;    ;
+; ALLOW_SHIFT_REGISTER_MERGING_ACROSS_HIERARCHIES                                ; AUTO               ;      ;    ;
+; AUTO_CLOCK_ENABLE_RECOGNITION                                                  ; ON                 ;      ;    ;
+; STRICT_RAM_RECOGNITION                                                         ; OFF                ;      ;    ;
+; ALLOW_SYNCH_CTRL_USAGE                                                         ; ON                 ;      ;    ;
+; FORCE_SYNCH_CLEAR                                                              ; OFF                ;      ;    ;
+; AUTO_RAM_TO_LCELL_CONVERSION                                                   ; OFF                ;      ;    ;
+; AUTO_RESOURCE_SHARING                                                          ; OFF                ;      ;    ;
+; ALLOW_ANY_SHIFT_REGISTER_SIZE_FOR_RECOGNITION                                  ; OFF                ;      ;    ;
+; MAX7000_FANIN_PER_CELL                                                         ; 100                ;      ;    ;
+; SYNTH_TIMING_DRIVEN_SYNTHESIS                                                  ; ON                 ;      ;    ;
+; IGNORE_MAX_FANOUT_ASSIGNMENTS                                                  ; OFF                ;      ;    ;
+; USE_HIGH_SPEED_ADDER                                                           ; AUTO               ;      ;    ;
+; SYNTH_GATED_CLOCK_CONVERSION                                                   ; OFF                ;      ;    ;
+; BLOCK_DESIGN_NAMING                                                            ; AUTO               ;      ;    ;
+; SHIFT_REGISTER_RECOGNITION_ACLR_SIGNAL                                         ; ON                 ;      ;    ;
+; PRPOF_ID                                                                       ; OFF                ;      ;    ;
+; DISABLE_DSP_NEGATE_INFERENCING                                                 ; OFF                ;      ;    ;
+; AUTO_MERGE_PLLS                                                                ; ON                 ;      ;    ;
+; IGNORE_MODE_FOR_MERGE                                                          ; OFF                ;      ;    ;
+; PERIPHERY_TO_CORE_PLACEMENT_AND_ROUTING_OPTIMIZATION                           ; OFF                ;      ;    ;
+; SLOW_SLEW_RATE                                                                 ; OFF                ;      ;    ;
+; PCI_IO                                                                         ; OFF                ;      ;    ;
+; TURBO_BIT                                                                      ; ON                 ;      ;    ;
+; WEAK_PULL_UP_RESISTOR                                                          ; OFF                ;      ;    ;
+; ENABLE_BUS_HOLD_CIRCUITRY                                                      ; OFF                ;      ;    ;
+; AUTO_GLOBAL_MEMORY_CONTROLS                                                    ; OFF                ;      ;    ;
+; QII_AUTO_PACKED_REGISTERS                                                      ; AUTO               ;      ;    ;
+; AUTO_PACKED_REGISTERS_MAX                                                      ; AUTO               ;      ;    ;
+; NORMAL_LCELL_INSERT                                                            ; ON                 ;      ;    ;
+; CARRY_OUT_PINS_LCELL_INSERT                                                    ; ON                 ;      ;    ;
+; XSTL_INPUT_ALLOW_SE_BUFFER                                                     ; OFF                ;      ;    ;
+; TREAT_BIDIR_AS_OUTPUT                                                          ; OFF                ;      ;    ;
+; AUTO_TURBO_BIT                                                                 ; ON                 ;      ;    ;
+; AUTO_GLOBAL_CLOCK                                                              ; ON                 ;      ;    ;
+; AUTO_GLOBAL_OE                                                                 ; ON                 ;      ;    ;
+; AUTO_GLOBAL_REGISTER_CONTROLS                                                  ; ON                 ;      ;    ;
+; SYNCHRONIZER_IDENTIFICATION                                                    ; AUTO               ;      ;    ;
+; M144K_BLOCK_READ_CLOCK_DUTY_CYCLE_DEPENDENCY                                   ; OFF                ;      ;    ;
+; CLAMPING_DIODE                                                                 ; OFF                ;      ;    ;
+; IMPLEMENT_MLAB_IN_16_BIT_DEEP_MODE                                             ; OFF                ;      ;    ;
+; OPTIMIZE_POWER_DURING_SYNTHESIS                                                ; NORMAL_COMPILATION ;      ;    ;
+; OPTIMIZE_POWER_DURING_SYNTHESIS                                                ; NORMAL_COMPILATION ;      ;    ;
++--------------------------------------------------------------------------------+--------------------+------+----+
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: top:top_inst|running_light:led_controller ;
++----------------+---------------------+-------------------------------------------------+
+; Parameter Name ; Value               ; Type                                            ;
++----------------+---------------------+-------------------------------------------------+
+; step_time      ; 1000000000000000 fs ; Physical                                        ;
++----------------+---------------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dbg_core:dbg_core_inst ;
++----------------+----------+-----------------------------------------+
+; Parameter Name ; Value    ; Type                                    ;
++----------------+----------+-----------------------------------------+
+; clk_freq       ; 50000000 ; Untyped                                 ;
+; baud_rate      ; 115200   ; Untyped                                 ;
++----------------+----------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++----------------------------+------------------------+
+; Type                       ; Count                  ;
++----------------------------+------------------------+
+; blackbox                   ; 1                      ;
+;     dbg_core:dbg_core_inst ; 1                      ;
+; boundary_port              ; 221                    ;
+; cycloneiii_ff              ; 72                     ;
+;     CLR                    ; 72                     ;
+; cycloneiii_io_obuf         ; 27                     ;
+; cycloneiii_lcell_comb      ; 141                    ;
+;     arith                  ; 55                     ;
+;         2 data inputs      ; 55                     ;
+;     normal                 ; 86                     ;
+;         0 data inputs      ; 1                      ;
+;         1 data inputs      ; 2                      ;
+;         2 data inputs      ; 1                      ;
+;         3 data inputs      ; 11                     ;
+;         4 data inputs      ; 71                     ;
+;                            ;                        ;
+; Max LUT depth              ; 8.00                   ;
+; Average LUT depth          ; 4.80                   ;
++----------------------------+------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+    Info: Processing started: Mon Jan 20 09:48:26 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dbg_top -c dbg_top
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 0 entities, in source file /home/edauser/Documents/hwmod_ws2024/lib/math/src/math_pkg.vhd
+    Info (12022): Found design unit 1: math_pkg File: /home/edauser/Documents/hwmod_ws2024/lib/math/src/math_pkg.vhd Line: 2
+    Info (12022): Found design unit 2: math_pkg-body File: /home/edauser/Documents/hwmod_ws2024/lib/math/src/math_pkg.vhd Line: 11
+Info (12021): Found 2 design units, including 0 entities, in source file /home/edauser/Documents/hwmod_ws2024/lib/util/src/util_pkg.vhd
+    Info (12022): Found design unit 1: util_pkg File: /home/edauser/Documents/hwmod_ws2024/lib/util/src/util_pkg.vhd Line: 5
+    Info (12022): Found design unit 2: util_pkg-body File: /home/edauser/Documents/hwmod_ws2024/lib/util/src/util_pkg.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd
+    Info (12022): Found design unit 1: dbg_top-dbg_top_arch File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 61
+    Info (12023): Found entity 1: dbg_top File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /home/edauser/Documents/hwmod_ws2024/lib/top/src/top.vhd
+    Info (12023): Found entity 1: top File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/top.vhd Line: 4
+Info (12021): Found 1 design units, including 0 entities, in source file /home/edauser/Documents/hwmod_ws2024/chapter3/running_light/top_arch.vhd
+    Info (12022): Found design unit 1: top-top_arch File: /home/edauser/Documents/hwmod_ws2024/chapter3/running_light/top_arch.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/edauser/Documents/hwmod_ws2024/chapter3/running_light/src/running_light.vhd
+    Info (12022): Found design unit 1: running_light-arch File: /home/edauser/Documents/hwmod_ws2024/chapter3/running_light/src/running_light.vhd Line: 18
+    Info (12023): Found entity 1: running_light File: /home/edauser/Documents/hwmod_ws2024/chapter3/running_light/src/running_light.vhd Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp
+    Info (12023): Found entity 1: dbg_core File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+Info (12127): Elaborating entity "dbg_top" for the top level hierarchy
+Info (12128): Elaborating entity "top" for hierarchy "top:top_inst" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 144
+Info (12128): Elaborating entity "running_light" for hierarchy "top:top_inst|running_light:led_controller" File: /home/edauser/Documents/hwmod_ws2024/chapter3/running_light/top_arch.vhd Line: 7
+Info (12128): Elaborating entity "dbg_core" for hierarchy "dbg_core:dbg_core_inst" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 197
+Info (13000): Registers with preset signals will power-up high File: /home/edauser/Documents/hwmod_ws2024/chapter3/running_light/src/running_light.vhd Line: 32
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "hex0[0]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 9
+    Warning (13410): Pin "hex0[1]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 9
+    Warning (13410): Pin "hex0[2]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 9
+    Warning (13410): Pin "hex0[3]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 9
+    Warning (13410): Pin "hex0[4]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 9
+    Warning (13410): Pin "hex0[5]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 9
+    Warning (13410): Pin "hex0[6]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 9
+    Warning (13410): Pin "hex1[0]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 10
+    Warning (13410): Pin "hex1[1]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 10
+    Warning (13410): Pin "hex1[2]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 10
+    Warning (13410): Pin "hex1[3]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 10
+    Warning (13410): Pin "hex1[4]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 10
+    Warning (13410): Pin "hex1[5]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 10
+    Warning (13410): Pin "hex1[6]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 10
+    Warning (13410): Pin "hex2[0]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 11
+    Warning (13410): Pin "hex2[1]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 11
+    Warning (13410): Pin "hex2[2]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 11
+    Warning (13410): Pin "hex2[3]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 11
+    Warning (13410): Pin "hex2[4]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 11
+    Warning (13410): Pin "hex2[5]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 11
+    Warning (13410): Pin "hex2[6]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 11
+    Warning (13410): Pin "hex3[0]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 12
+    Warning (13410): Pin "hex3[1]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 12
+    Warning (13410): Pin "hex3[2]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 12
+    Warning (13410): Pin "hex3[3]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 12
+    Warning (13410): Pin "hex3[4]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 12
+    Warning (13410): Pin "hex3[5]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 12
+    Warning (13410): Pin "hex3[6]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 12
+    Warning (13410): Pin "hex4[0]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 13
+    Warning (13410): Pin "hex4[1]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 13
+    Warning (13410): Pin "hex4[2]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 13
+    Warning (13410): Pin "hex4[3]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 13
+    Warning (13410): Pin "hex4[4]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 13
+    Warning (13410): Pin "hex4[5]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 13
+    Warning (13410): Pin "hex4[6]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 13
+    Warning (13410): Pin "hex5[0]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 14
+    Warning (13410): Pin "hex5[1]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 14
+    Warning (13410): Pin "hex5[2]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 14
+    Warning (13410): Pin "hex5[3]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 14
+    Warning (13410): Pin "hex5[4]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 14
+    Warning (13410): Pin "hex5[5]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 14
+    Warning (13410): Pin "hex5[6]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 14
+    Warning (13410): Pin "hex6[0]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 15
+    Warning (13410): Pin "hex6[1]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 15
+    Warning (13410): Pin "hex6[2]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 15
+    Warning (13410): Pin "hex6[3]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 15
+    Warning (13410): Pin "hex6[4]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 15
+    Warning (13410): Pin "hex6[5]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 15
+    Warning (13410): Pin "hex6[6]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 15
+    Warning (13410): Pin "hex7[0]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 16
+    Warning (13410): Pin "hex7[1]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 16
+    Warning (13410): Pin "hex7[2]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 16
+    Warning (13410): Pin "hex7[3]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 16
+    Warning (13410): Pin "hex7[4]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 16
+    Warning (13410): Pin "hex7[5]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 16
+    Warning (13410): Pin "hex7[6]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 16
+    Warning (13410): Pin "ledg[0]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 17
+    Warning (13410): Pin "ledg[1]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 17
+    Warning (13410): Pin "ledg[2]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 17
+    Warning (13410): Pin "ledg[3]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 17
+    Warning (13410): Pin "ledg[4]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 17
+    Warning (13410): Pin "ledg[5]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 17
+    Warning (13410): Pin "ledg[6]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 17
+    Warning (13410): Pin "ledg[7]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 17
+    Warning (13410): Pin "ledg[8]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 17
+    Warning (13410): Pin "ledr[8]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 18
+    Warning (13410): Pin "ledr[9]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 18
+    Warning (13410): Pin "ledr[10]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 18
+    Warning (13410): Pin "ledr[11]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 18
+    Warning (13410): Pin "ledr[12]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 18
+    Warning (13410): Pin "ledr[13]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 18
+    Warning (13410): Pin "ledr[14]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 18
+    Warning (13410): Pin "ledr[15]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 18
+    Warning (13410): Pin "ledr[16]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 18
+    Warning (13410): Pin "ledr[17]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 18
+    Warning (13410): Pin "snes_latch" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 20
+    Warning (13410): Pin "snes_clk" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 21
+    Warning (13410): Pin "sram_addr[0]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[1]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[2]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[3]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[4]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[5]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[6]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[7]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[8]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[9]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[10]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[11]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[12]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[13]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[14]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[15]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[16]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[17]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[18]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_addr[19]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 24
+    Warning (13410): Pin "sram_ub_n" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 25
+    Warning (13410): Pin "sram_lb_n" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 26
+    Warning (13410): Pin "sram_we_n" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 27
+    Warning (13410): Pin "sram_ce_n" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 28
+    Warning (13410): Pin "sram_oe_n" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 29
+    Warning (13410): Pin "wm8731_xck" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 30
+    Warning (13410): Pin "wm8731_dacdat" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 33
+    Warning (13410): Pin "wm8731_daclrck" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 34
+    Warning (13410): Pin "wm8731_bclk" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 35
+    Warning (13410): Pin "aux[0]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "aux[1]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "aux[2]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "aux[3]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "aux[4]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "aux[5]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "aux[6]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "aux[7]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "aux[8]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "aux[9]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "aux[10]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "aux[11]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "aux[12]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "aux[13]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "aux[14]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "aux[15]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 36
+    Warning (13410): Pin "vga_dac_r[0]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 37
+    Warning (13410): Pin "vga_dac_r[1]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 37
+    Warning (13410): Pin "vga_dac_r[2]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 37
+    Warning (13410): Pin "vga_dac_r[3]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 37
+    Warning (13410): Pin "vga_dac_r[4]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 37
+    Warning (13410): Pin "vga_dac_r[5]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 37
+    Warning (13410): Pin "vga_dac_r[6]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 37
+    Warning (13410): Pin "vga_dac_r[7]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 37
+    Warning (13410): Pin "vga_dac_g[0]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 38
+    Warning (13410): Pin "vga_dac_g[1]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 38
+    Warning (13410): Pin "vga_dac_g[2]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 38
+    Warning (13410): Pin "vga_dac_g[3]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 38
+    Warning (13410): Pin "vga_dac_g[4]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 38
+    Warning (13410): Pin "vga_dac_g[5]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 38
+    Warning (13410): Pin "vga_dac_g[6]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 38
+    Warning (13410): Pin "vga_dac_g[7]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 38
+    Warning (13410): Pin "vga_dac_b[0]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 39
+    Warning (13410): Pin "vga_dac_b[1]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 39
+    Warning (13410): Pin "vga_dac_b[2]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 39
+    Warning (13410): Pin "vga_dac_b[3]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 39
+    Warning (13410): Pin "vga_dac_b[4]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 39
+    Warning (13410): Pin "vga_dac_b[5]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 39
+    Warning (13410): Pin "vga_dac_b[6]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 39
+    Warning (13410): Pin "vga_dac_b[7]" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 39
+    Warning (13410): Pin "vga_dac_clk" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 40
+    Warning (13410): Pin "vga_dac_sync_n" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 41
+    Warning (13410): Pin "vga_dac_blank_n" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 42
+    Warning (13410): Pin "vga_hsync" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 43
+    Warning (13410): Pin "vga_vsync" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 44
+    Warning (13410): Pin "char_lcd_en" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 46
+    Warning (13410): Pin "char_lcd_rw" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 47
+    Warning (13410): Pin "char_lcd_rs" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 48
+    Warning (13410): Pin "char_lcd_on" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 49
+    Warning (13410): Pin "char_lcd_blon" is stuck at GND File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 50
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register top:top_inst|running_light:led_controller|s.clk_time[63] will power up to Low File: /home/edauser/Documents/hwmod_ws2024/chapter3/running_light/src/running_light.vhd Line: 25
+Info (144001): Generated suppressed messages file /home/edauser/Documents/hwmod_ws2024/chapter3/running_light/quartus/output_files/dbg_top.map.smsg
+Info (35026): Attempting to remove 232 I/O cell(s) that do not connect to top-level pins or have illegal connectivity
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|emulated_tx~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|emulated_tx"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[0]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[0]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[1]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[1]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[2]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[2]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[3]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[3]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[4]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[4]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[5]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[5]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[6]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[6]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[7]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[7]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[8]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[8]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[9]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[9]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[10]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[10]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[11]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[11]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[12]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[12]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[13]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[13]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[14]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[14]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[15]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[15]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[16]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[16]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[17]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|switches_output[17]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|keys_output[0]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|keys_output[0]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|keys_output[1]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|keys_output[1]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|keys_output[2]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|keys_output[2]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|keys_output[3]~output"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|keys_output[3]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|clk~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|clk"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[63]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[63]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[61]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[61]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[62]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[62]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[60]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[60]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[59]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[59]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[57]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[57]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[58]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[58]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[56]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[56]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[55]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[55]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[53]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[53]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[54]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[54]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[52]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[52]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[51]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[51]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[49]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[49]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[50]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[50]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[48]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[48]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[47]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[47]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[45]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[45]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[46]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[46]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[44]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[44]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[43]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[43]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[41]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[41]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[42]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[42]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[40]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[40]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[39]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[39]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[37]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[37]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[38]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[38]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[36]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[36]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[35]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[35]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[33]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[33]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[34]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[34]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[32]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[32]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[31]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[31]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[29]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[29]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[30]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[30]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[28]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[28]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[27]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[27]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[25]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[25]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[26]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[26]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[24]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[24]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[23]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[23]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[21]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[21]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[22]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[22]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[20]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[20]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[19]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[19]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[17]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[17]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[17]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[17]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[18]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[18]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[16]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[16]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[16]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[16]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[15]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[15]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[15]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[15]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[13]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[13]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[13]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[13]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[14]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[14]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[14]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[14]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[12]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[12]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[12]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[12]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[11]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[11]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[11]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[11]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[9]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[9]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[9]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[9]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[10]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[10]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[10]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[10]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[8]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[8]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[8]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[8]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[8]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[8]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[7]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[7]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[7]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[7]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[7]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[7]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[5]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[5]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[5]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[5]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[5]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[5]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[6]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[6]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[6]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[6]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[6]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[6]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[4]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[4]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[4]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[4]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[4]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[4]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[3]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[3]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[3]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[3]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[3]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[3]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[1]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[1]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[1]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[1]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[1]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[1]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[2]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[2]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[2]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[2]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[2]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[2]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[0]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|hex_segments_input[0]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[0]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledr_input[0]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[0]~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|ledg_input[0]"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|emulated_rx~input"
+    Info (35027): Removed I/O cell "dbg_core:dbg_core_inst|emulated_rx"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (35003): Optimize away 138 nodes that do not fanout to OUTPUT or BIDIR pins
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_u2o1:auto_generated|ram_block1a0" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_u2o1:auto_generated|ram_block1a1" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_u2o1:auto_generated|ram_block1a2" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_u2o1:auto_generated|ram_block1a3" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_u2o1:auto_generated|ram_block1a4" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_u2o1:auto_generated|ram_block1a5" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_u2o1:auto_generated|ram_block1a6" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|altsyncram:ram_rtl_0|altsyncram_u2o1:auto_generated|ram_block1a7" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_uart_tx_fsm:tx_inst|transmit_data[0]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_uart_tx_fsm:tx_inst|transmit_data[1]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|rd1_data[0]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_uart_tx_fsm:tx_inst|transmit_data[2]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|rd1_data[1]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_uart_tx_fsm:tx_inst|transmit_data[3]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|rd1_data[2]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|tx_data[0]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_uart_tx_fsm:tx_inst|transmit_data[4]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|rd1_data[3]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|tx_data[1]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_uart_tx_fsm:tx_inst|transmit_data[5]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|rd1_data[4]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|tx_data[2]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_uart_tx_fsm:tx_inst|transmit_data[6]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|rd1_data[5]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|tx_data[3]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_uart_tx_fsm:tx_inst|transmit_data[7]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|rd1_data[6]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|tx_data[4]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|dcl_fifo:tx_fifo|dcl_dp_ram_1c1r1w:memory_inst|rd1_data[7]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|tx_data[5]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|tx_data[6]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+    Info (35004): Node: "dbg_core:dbg_core_inst|uart_emulator:uart_emulator_inst|tx_data[7]" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_core.qxp Line: -1
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "snes_data" File: /home/edauser/Documents/hwmod_ws2024/lib/top/src/dbg_top.vhd Line: 22
+Info (21057): Implemented 2900 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 27 input pins
+    Info (21059): Implemented 166 output pins
+    Info (21060): Implemented 28 bidirectional pins
+    Info (21061): Implemented 2655 logic cells
+    Info (21064): Implemented 24 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 161 warnings
+    Info: Peak virtual memory: 650 megabytes
+    Info: Processing ended: Mon Jan 20 09:48:32 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:10
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/edauser/Documents/hwmod_ws2024/chapter3/running_light/quartus/output_files/dbg_top.map.smsg.
+
+

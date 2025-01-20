@@ -1,0 +1,11 @@
+
+State Machine - |dbg_top|top:top_inst|running_light:led_controller|s.state
+Name s.state.S7 s.state.S6 s.state.S5 s.state.S4 s.state.S3 s.state.S2 s.state.S1 s.state.S0 
+s.state.S0 0 0 0 0 0 0 0 0 
+s.state.S1 0 0 0 0 0 0 1 1 
+s.state.S2 0 0 0 0 0 1 0 1 
+s.state.S3 0 0 0 0 1 0 0 1 
+s.state.S4 0 0 0 1 0 0 0 1 
+s.state.S5 0 0 1 0 0 0 0 1 
+s.state.S6 0 1 0 0 0 0 0 1 
+s.state.S7 1 0 0 0 0 0 0 1 

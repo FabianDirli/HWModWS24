@@ -1,0 +1,227 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/edauser/Documents/hwmod_ws2024/chapter3/running_light
+Pmath_pkg
+!i122 250
+Z1 w1737328226
+R0
+Z2 8../../lib/math/src/math_pkg.vhd
+Z3 F../../lib/math/src/math_pkg.vhd
+l0
+L2 1
+Vmlgz8Ha97hKngdmW4Il4P1
+!s100 SMUkQ^86hQci3V_S9j@^K1
+Z4 OV;C;2020.1;71
+33
+b1
+Z5 !s110 1737387286
+!i10b 1
+Z6 !s108 1737387286.000000
+Z7 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|../../lib/math/src/math_pkg.vhd|
+Z8 !s107 ../../lib/math/src/math_pkg.vhd|
+!i113 1
+Z9 o-suppress 1236 -O0 -check_synthesis -2008 -work work
+Z10 tExplicit 1 CvgOpt 0
+Bbody
+Z11 DPx4 work 8 math_pkg 0 22 mlgz8Ha97hKngdmW4Il4P1
+!i122 250
+l0
+L11 1
+V6i<cYN=lXmI[Ic@:h8F`z0
+!s100 CYQLI4Ci@5U5[oa]<Y2_M1
+R4
+33
+R5
+!i10b 1
+R6
+R7
+R8
+!i113 1
+R9
+R10
+Erunning_light
+Z12 w1737387280
+R11
+Z13 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z14 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z15 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 252
+R0
+Z16 8src/running_light.vhd
+Z17 Fsrc/running_light.vhd
+l0
+L7 1
+VcZ1A?j1EnajaC43I1biB50
+!s100 ;>?]4^G@50lLJ?<4IPNAo0
+R4
+33
+Z18 !s110 1737387287
+!i10b 1
+Z19 !s108 1737387287.000000
+Z20 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|src/running_light.vhd|
+Z21 !s107 src/running_light.vhd|
+!i113 1
+R9
+R10
+Aarch
+R11
+R13
+R14
+R15
+Z22 DEx4 work 13 running_light 0 22 cZ1A?j1EnajaC43I1biB50
+!i122 252
+l28
+L18 104
+VW7NBjmT:5JlCoN2W<MgeF2
+!s100 SGFAlSa_3W8da7hbD`=a_0
+R4
+33
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 1
+R9
+R10
+Erunning_light_tb
+Z23 w1737387159
+R14
+R15
+!i122 253
+R0
+Z24 8tb/running_light_tb.vhd
+Z25 Ftb/running_light_tb.vhd
+l0
+L4 1
+V?SohYcemL^O[G^YL5^z041
+!s100 <M2j7mNUUb3XJHHC3E@4W1
+R4
+33
+R18
+!i10b 1
+R19
+Z26 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|tb/running_light_tb.vhd|
+Z27 !s107 tb/running_light_tb.vhd|
+!i113 1
+R9
+R10
+Aarch
+R11
+R13
+R22
+R14
+R15
+DEx4 work 16 running_light_tb 0 22 ?SohYcemL^O[G^YL5^z041
+!i122 253
+l13
+L7 42
+V9_AhMg;mgRNbN:=52]f=C2
+!s100 zBCoPgJg8^XJoY35VlHQB0
+R4
+33
+R18
+!i10b 1
+R19
+R26
+R27
+!i113 1
+R9
+R10
+Etop
+R1
+R14
+R15
+!i122 254
+R0
+8../../lib/top/src/top.vhd
+F../../lib/top/src/top.vhd
+l0
+L4 1
+VB>_j^g<Q^W::amo:c[>NR0
+!s100 E6P8W3:9zUXd<ABUHgB7K2
+R4
+33
+R18
+!i10b 1
+R19
+!s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|../../lib/top/src/top.vhd|
+!s107 ../../lib/top/src/top.vhd|
+!i113 1
+R9
+R10
+Atop_arch
+Z28 w1737383304
+R11
+R13
+R22
+Z29 DEx4 work 3 top 0 22 B>_j^g<Q^W::amo:c[>NR0
+R14
+R15
+!i122 255
+Z30 8top_arch.vhd
+Z31 Ftop_arch.vhd
+l5
+Z32 L4 13
+Z33 VOo6lG_2lNgmifbInFaVfW2
+Z34 !s100 7ai3ZH[PkO163]9=`j8RK2
+R4
+33
+!s110 1737387288
+!i10b 1
+R19
+Z35 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|top_arch.vhd|
+Z36 !s107 top_arch.vhd|
+!i113 1
+R9
+R10
+Putil_pkg
+R14
+R15
+!i122 251
+R1
+R0
+Z37 8../../lib/util/src/util_pkg.vhd
+Z38 F../../lib/util/src/util_pkg.vhd
+l0
+L5 1
+VU[4:OTM3e?RQoW]Q:0XSP3
+!s100 E@G;dBJfSVQ61PSm<7La01
+R4
+33
+b1
+R18
+!i10b 1
+R19
+Z39 !s90 -O0|-check_synthesis|-2008|-work|work|-suppress|1236|../../lib/util/src/util_pkg.vhd|
+Z40 !s107 ../../lib/util/src/util_pkg.vhd|
+!i113 1
+R9
+R10
+Bbody
+DPx4 work 8 util_pkg 0 22 U[4:OTM3e?RQoW]Q:0XSP3
+R14
+R15
+!i122 251
+l0
+L29 1
+Vo^@>zUfZ:IZBg>_0^7N<f3
+!s100 z:o:NmfOKaeWAN80S;aA^3
+R4
+33
+R18
+!i10b 1
+R19
+R39
+R40
+!i113 1
+R9
+R10

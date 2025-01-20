@@ -23,8 +23,26 @@ begin
 		leds => leds
 	);
 
+	stimulus : process is
+	begin
+		res_n <= '0';
+		wait for 2*CLK_PERIOD;
+		res_n <= '1';
+		wait for CLK_PERIOD;
+		wait for 1000 ns;
+		stop_clk <= true;
+		wait;
+	end process;
+
 	clk_gen : process is
 	begin
+		while not stop_clk loop
+			clk <= '0';
+			wait for CLK_PERIOD/2;
+			clk <= '1';
+			wait for CLK_PERIOD/2;
+		end loop;
+		wait;
 	end process;
 
 end architecture;

@@ -11,7 +11,7 @@ begin
 	port map (
 		clk => clk,
 		res_n => keys(0),
-		leds => ledr(17 downto 0)
+		leds => ledr(7 downto 0)
 	);
 end architecture;
 

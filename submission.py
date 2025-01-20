@@ -61,6 +61,16 @@ def create_submission_archive(chapter: str, tasks: list[str]):
 	else:
 		create_submission_archive_new(chapter, tasks)
 
+def hash_file_digest(file_path: pathlib.Path, algorithm="sha256", chunk_size=8192) -> str:
+	try:
+		hasher = hashlib.new(algorithm)
+	except ValueError as e:
+		raise ValueError(f"Invalid algorithm '{algorithm}'.") from e
+	with open(file_path, "rb") as f:
+		while chunk := f.read(chunk_size):
+			hasher.update(chunk)
+	return hasher.hexdigest()
+
 
 def create_submission_archive_new(chapter: str, tasks: list[str]):
 	chapter_dir = pathlib.Path(chapter).absolute()
@@ -116,9 +126,8 @@ def create_submission_archive_new(chapter: str, tasks: list[str]):
 							error(f"It seems like you did not implement {task_dir / file}. If you think this is an error please contact the teaching staff!")
 				elif check_type == "CONSTANT":
 					actual = task_data["files"][file]["Hash"]
-					with open(task_dir / file, "rb") as submitted_file:
-						expected = hashlib.file_digest(submitted_file, 'sha256').hexdigest()
-						if expected != actual:
+					expected = hash_file_digest(task_dir / file, 'sha256')
+					if expected != actual:
 							error(f"You modified {task_dir / file} -- Please note that you must not modify this file - if you believe this to be an error please contact the teaching staff.")
 			elif check_type == "CREATE":
 				if not (task_dir / file).exists():
